@@ -16,7 +16,7 @@ PS> venv\Scripts\activate
 
 ### Run the bot script
 ```
-$ python boy.py`
+$ python boy.py
 ```
 
 ### Install Dependencies
