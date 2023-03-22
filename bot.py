@@ -5,14 +5,26 @@ from thefuzz import fuzz
 from thefuzz import process
 
 # Telegram bot
-bot_token = '6054419619:AAH3mx2PpvdZX1wnsPL09IF2jJIdRuFpF78'
+TELEGROM_BOT_TOKEN = '6054419619:AAH3mx2PpvdZX1wnsPL09IF2jJIdRuFpF78'
 
 # OpenAI API
 openai.api_key = "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"
 
-# Database - TODO: read from local database
-file_path = 'faq.tsv'
-df = pd.read_csv(file_path, sep="\t")
+# FAQ file to load data from - TODO: read from local database
+FAQ_FILE = 'binstarter_faq.xlsx'
+
+def open_file(file_name):
+    '''
+    Utility function to read file based on file extension.
+    '''
+    if 'xlsx' in file_name:
+        return pd.read_excel(file_name, sheet_name=None)
+    elif 'csv' in file_name:
+        return pd.read_csv(file_name, sep=',')
+    elif 'tsv' in file_name:
+        return pd.read_csv(file_name, sep='\t')
+    else:
+        print('Unsupported file type.')
 
 
 def start_command(update, context):
@@ -28,6 +40,7 @@ def handle_response(query):
         print("Enter a valid question\n")
         return "Enter a valid question."
 
+    df = open_file(FAQ_FILE)
     question_list = df['Question'].tolist()
 
     result = process.extractOne(
@@ -93,7 +106,7 @@ def error(update, context):
 if __name__ == '__main__':
     print('Starting up bot...')
 
-    updater = Updater(bot_token)
+    updater = Updater(TELEGROM_BOT_TOKEN)
     dp = updater.dispatcher
 
     # Commands
