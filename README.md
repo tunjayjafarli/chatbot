@@ -25,5 +25,6 @@ $ pip install python-telegram-bot --upgrade
 $ pip install openai --upgrade
 $ pip install pandas
 $ pip install thefuzz
+$ pip install openpyxl
 ```
 TODO: create `requirements.txt` file to manage dependencies.
