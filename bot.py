@@ -18,7 +18,7 @@ def open_file(file_name):
     Utility function to read file based on file extension.
     '''
     if 'xlsx' in file_name:
-        return pd.read_excel(file_name, sheet_name=None)
+        return pd.read_excel(file_name)
     elif 'csv' in file_name:
         return pd.read_csv(file_name, sep=',')
     elif 'tsv' in file_name:
@@ -34,7 +34,7 @@ def start_command(update, context):
 def handle_response(query):
     '''
     Search for question & answer in the provided document.
-    If no matchng question found, fetch from OpenAI.
+    If no matching question found, fetch from OpenAI.
     '''
     if not query or query == '' or len(query) < 2:
         print("Enter a valid question\n")
@@ -46,8 +46,8 @@ def handle_response(query):
     result = process.extractOne(
         query, 
         question_list, 
-        scorer=fuzz.token_set_ratio, 
-        score_cutoff=75
+        scorer=fuzz.partial_token_sort_ratio, 
+        score_cutoff=70
     )
 
     if result is not None and result[0] and len(result[0]) > 3:
