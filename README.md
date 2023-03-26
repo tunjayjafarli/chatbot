@@ -7,10 +7,9 @@ MAC:
 $ python3 -m venv venv
 $ source venv/bin/activate
 ```
-
 WINDOWS:
 ```
-PS> python -m venv venv
+PS> python3 -m venv venv
 PS> venv\Scripts\activate
 ```
 
@@ -21,5 +20,5 @@ $ pip install -r requirements.txt
 
 ### Run the bot script
 ```
-$ python boy.py
+$ python3 bot.py
 ```
