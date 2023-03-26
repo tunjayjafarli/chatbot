@@ -1,6 +1,13 @@
-from telegram.ext import *
+import pandas
 import openai
-import pandas as pd
+
+from telegram import Update
+from telegram.ext import ApplicationBuilder
+from telegram.ext import filters
+from telegram.ext import CommandHandler
+from telegram.ext import ContextTypes
+from telegram.ext import MessageHandler
+
 from thefuzz import fuzz
 from thefuzz import process
 
@@ -13,25 +20,22 @@ openai.api_key = "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"
 # FAQ file to load data from - TODO: read from local database
 FAQ_FILE = 'binstarter_faq.xlsx'
 
+
 def open_file(file_name):
     '''
     Utility function to read file based on file extension.
     '''
     if 'xlsx' in file_name:
-        return pd.read_excel(file_name)
+        return pandas.read_excel(file_name)
     elif 'csv' in file_name:
-        return pd.read_csv(file_name, sep=',')
+        return pandas.read_csv(file_name, sep=',')
     elif 'tsv' in file_name:
-        return pd.read_csv(file_name, sep='\t')
+        return pandas.read_csv(file_name, sep='\t')
     else:
         print('Unsupported file type.')
 
 
-def start_command(update, context):
-    update.message.reply_text('Hello there! I\'m a bot. What\'s up?')
-
-
-def handle_response(query):
+def get_response(query):
     '''
     Search for question & answer in the provided document.
     If no matching question found, fetch from OpenAI.
@@ -73,9 +77,13 @@ def handle_response(query):
     print("----------------------------")
 
     return answer
-        
 
-def handle_message(update, context):
+
+async def handle_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("I'm a bot to help answer your questions, please ask me!")
+
+
+async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Get basic info of the incoming message
     chat_type = update.message.chat.type
     message_text = str(update.message.text).lower()
@@ -84,40 +92,36 @@ def handle_message(update, context):
     # Print a log for debugging
     print(f'User ({update.message.chat.id}) says: "{message_text}" in: {chat_type} chat')
 
-    # React to group messages only if users mention the bot directly
+    # Respond to group messages only if users mention the bot directly
     if chat_type == 'group' or chat_type == 'supergroup':
         # TODO: get the bot name programmaticaly since it will be different for each customer
-        if '@freebot1_bot_bot' in message_text:
+        if 'bot' in message_text or '@freebot1_bot_bot' in message_text:
             new_text = message_text.replace('@freebot1_bot_bot', '').strip()
-            response = handle_response(new_text)
+            response = get_response(new_text)
     else:
-        response = handle_response(message_text)
+        response = get_response(message_text)
 
-    # Reply normal if the message is in private
-    update.message.reply_text(response)
-
-
-# Log errors
-def error(update, context):
-    print(f'Update {update} caused error {context.error}')
+    if response:
+        await update.message.reply_text(response)
 
 
 # Run the program
-if __name__ == '__main__':
+def main():
     print('Starting up bot...')
 
-    updater = Updater(TELEGROM_BOT_TOKEN)
-    dp = updater.dispatcher
+    application = ApplicationBuilder().token(TELEGROM_BOT_TOKEN).build()
 
-    # Commands
-    dp.add_handler(CommandHandler('start', start_command))
+    # Add support for '/start' command
+    start_handler = CommandHandler('start', handle_start)
+    application.add_handler(start_handler)
 
-    # Messages
-    dp.add_handler(MessageHandler(Filters.text, handle_message))
-
-    # Log all errors
-    dp.add_error_handler(error)
+    # Add message handler for all regular messages
+    message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
+    application.add_handler(message_handler)
 
     # Run the bot
-    updater.start_polling(1.0)
-    updater.idle()
+    application.run_polling()
+
+
+if __name__ == '__main__':
+    main()
