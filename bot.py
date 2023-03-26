@@ -77,21 +77,21 @@ def handle_response(query):
 
 def handle_message(update, context):
     # Get basic info of the incoming message
-    message_type = update.message.chat.type
-    text = str(update.message.text).lower()
+    chat_type = update.message.chat.type
+    message_text = str(update.message.text).lower()
     response = ''
 
     # Print a log for debugging
-    print(f'User ({update.message.chat.id}) says: "{text}" in: {message_type}')
+    print(f'User ({update.message.chat.id}) says: "{message_text}" in: {chat_type} chat')
 
     # React to group messages only if users mention the bot directly
-    if message_type == 'group':
+    if chat_type == 'group' or chat_type == 'supergroup':
         # TODO: get the bot name programmaticaly since it will be different for each customer
-        if '@freebot1_bot_bot' in text:
-            new_text = text.replace('@freebot1_bot_bot', '').strip()
+        if '@freebot1_bot_bot' in message_text:
+            new_text = message_text.replace('@freebot1_bot_bot', '').strip()
             response = handle_response(new_text)
     else:
-        response = handle_response(text)
+        response = handle_response(message_text)
 
     # Reply normal if the message is in private
     update.message.reply_text(response)
