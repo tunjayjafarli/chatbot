@@ -14,17 +14,12 @@ PS> python -m venv venv
 PS> venv\Scripts\activate
 ```
 
+### Install Dependencies
+```
+$ pip install -r requirements.txt
+```
+
 ### Run the bot script
 ```
 $ python boy.py
 ```
-
-### Install Dependencies
-```
-$ pip install python-telegram-bot --upgrade
-$ pip install openai --upgrade
-$ pip install pandas
-$ pip install thefuzz
-$ pip install openpyxl
-```
-TODO: create `requirements.txt` file to manage dependencies.
