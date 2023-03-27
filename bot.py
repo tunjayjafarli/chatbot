@@ -47,18 +47,53 @@ def get_response(query):
     df = open_file(FAQ_FILE)
     question_list = df['Question'].tolist()
 
-    result = process.extractOne(
-        query, 
-        question_list, 
+    # result = process.extractOne(
+    #     query, 
+    #     question_list, 
+    #     scorer=fuzz.partial_token_sort_ratio, 
+    #     score_cutoff=70
+    # )
+
+    result = process.extract(
+        query=query, 
+        choices=question_list, 
         scorer=fuzz.partial_token_sort_ratio, 
-        score_cutoff=70
+        limit=5
     )
 
-    if result is not None and result[0] and len(result[0]) > 3:
-        matchingQuestion, score = result
-        answer = df.loc[df['Question'] == matchingQuestion].iloc[0]['Answer']
+    # if result is not None and result[0] and len(result[0]) > 3:
+    #     matchingQuestion, score = result
+    #     answer = df.loc[df['Question'] == matchingQuestion].iloc[0]['Answer']
+    # 
+    #     print("Question found: ", matchingQuestion, "Score: ", score)
 
-        print("Question found: ", matchingQuestion, "Score: ", score)
+    if result is not None and len(result) > 0:
+
+        matching_answers = []
+        for q, _ in result:
+            answer = df.loc[df['Question'] == q].iloc[0]['Answer']
+            matching_answers.append(answer)
+
+        # todo: also search the answers column to get matching ones
+
+        context = '\n'.join(matching_answers)
+
+        header = 'Answer the question as truthfully as possible using the provided context, and if the answer is not contained within the text below, say "I dont know."'
+
+        prompt = header + "\n\n" + context + "\n\n Q: " + query + "\n A:"
+
+        print('REQUEST: ', prompt)
+
+        response = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=f"{prompt}",
+            max_tokens=1024,
+            n=1,
+            stop=None,
+            temperature=0.5,
+        )
+        answer = response.choices[0].text
+
     else:
         print("No matching question found. Asking OpenAI...\n")
 
@@ -73,7 +108,7 @@ def get_response(query):
         )
         answer = response.choices[0].text
         
-    print("Answer: ", answer)
+    print("\nAnswer: ", answer)
     print("----------------------------")
 
     return answer
@@ -109,18 +144,22 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     print('Starting up bot...')
 
-    application = ApplicationBuilder().token(TELEGROM_BOT_TOKEN).build()
+    while True:
+        text = input('> ')
+        get_response(text)
 
-    # Add support for '/start' command
-    start_handler = CommandHandler('start', handle_start)
-    application.add_handler(start_handler)
+    # application = ApplicationBuilder().token(TELEGROM_BOT_TOKEN).build()
 
-    # Add message handler for all regular messages
-    message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
-    application.add_handler(message_handler)
+    # # Add support for '/start' command
+    # start_handler = CommandHandler('start', handle_start)
+    # application.add_handler(start_handler)
 
-    # Run the bot
-    application.run_polling()
+    # # Add message handler for all regular messages
+    # message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
+    # application.add_handler(message_handler)
+
+    # # Run the bot
+    # application.run_polling()
 
 
 if __name__ == '__main__':
