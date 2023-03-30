@@ -1,6 +1,12 @@
 # chatbot
 Automated Telegram bot powered by AI
 
+
+Clone and change directory:
+```
+$ cd chatbot
+```
+
 ### Set up virtual environment
 MAC:
 ```
