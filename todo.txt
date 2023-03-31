@@ -1,10 +1,10 @@
 Chat bot project action items:
-- [ ] Add support for answer questions in other languages
-- [ ] Use knowledge base instead of FAQ’s document (input from website)
-- [ ] Optimization: Translate data to each language and save in our database 
-- [ ] OpenAI API key - billing setting per API key is possible?
+- [ ] Add support to answer questions in other languages
+- [ ] Use knowledge base instead of FAQ’s document - this will be input field on the website
+- [ ] Optimization: Translate data to each language once and save in the database
+- [ ] Investigate: Is it possible to set OpenAI billing setting per API key?
+- [ ] Investigate: Can OpenAI scan websites to get the knowledge base?
 - [ ] Filter our undesired words e.g. hate, swear, violence etc.
-- [ ] Investigate: Can OpenAI scan website to get the knowledge base?
 
 
 List of languages to support:
