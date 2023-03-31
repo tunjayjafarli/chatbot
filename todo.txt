@@ -1,0 +1,11 @@
+Chat bot project action items:
+- [ ] Add support for answer questions in other languages
+- [ ] Use knowledge base instead of FAQ’s document (input from website)
+- [ ] Optimization: Translate data to each language and save in our database 
+- [ ] OpenAI API key - billing setting per API key is possible?
+- [ ] Filter our undesired words e.g. hate, swear, violence etc.
+- [ ] Investigate: Can OpenAI scan website to get the knowledge base?
+
+
+List of languages to support:
+- Turkish, Russian, Chinese, Arabic, Vietnamese, Spanish, German, Dutch, Japanese, Hindi, Portuguese, Indodenisian, Tagalog
