@@ -42,57 +42,58 @@ def get_response(query):
     '''
     if not query or query == '' or len(query) < 2:
         print("Enter a valid question\n")
-        return "Enter a valid question."
+        return "Please ask me a valid question so that I can get you the answers you need!"
 
     df = open_file(FAQ_FILE)
     question_list = df['Question'].tolist()
+    answer_list = df['Answer'].tolist()
 
-    # result = process.extractOne(
-    #     query, 
-    #     question_list, 
-    #     scorer=fuzz.partial_token_sort_ratio, 
-    #     score_cutoff=70
-    # )
-
-    result = process.extract(
+    matching_questions = process.extract(
         query=query, 
         choices=question_list, 
-        scorer=fuzz.partial_token_sort_ratio, 
+        scorer=fuzz.token_set_ratio, 
         limit=5
     )
 
-    # if result is not None and result[0] and len(result[0]) > 3:
-    #     matchingQuestion, score = result
-    #     answer = df.loc[df['Question'] == matchingQuestion].iloc[0]['Answer']
-    # 
-    #     print("Question found: ", matchingQuestion, "Score: ", score)
+    matching_answers = process.extract(
+        query=query,
+        choices=answer_list,
+        scorer=fuzz.token_set_ratio,
+        limit=5
+    )
 
-    if result is not None and len(result) > 0:
+    context_data = set()
 
-        matching_answers = []
-        for q, _ in result:
+    if matching_questions or matching_answers:
+
+        for q, _ in matching_questions:
             answer = df.loc[df['Question'] == q].iloc[0]['Answer']
-            matching_answers.append(answer)
+            if type(answer) == str:
+                context_data.add(answer)
 
-        # todo: also search the answers column to get matching ones
+        for ans, _ in matching_answers:
+            if type(answer) == str:
+                context_data.add(ans)
 
-        context = '\n'.join(matching_answers)
-
-        header = 'Answer the question as truthfully as possible using the provided context, and if the answer is not contained within the text below, say "I dont know."'
-
+        context = '\n'.join(context_data)
+        header = 'Answer the question as truthfully as possible using the provided context below.'
+        # , and if the answer is not contained within the text below, say "I dont know."
         prompt = header + "\n\n" + context + "\n\n Q: " + query + "\n A:"
 
-        print('REQUEST: ', prompt)
+        print('OPENAI PROMPT: ', prompt)
 
-        response = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=f"{prompt}",
-            max_tokens=1024,
-            n=1,
-            stop=None,
-            temperature=0.5,
-        )
-        answer = response.choices[0].text
+        try:
+            response = openai.Completion.create(
+                engine="text-davinci-003",
+                prompt=f"{prompt}",
+                max_tokens=1024,
+                n=1,
+                stop=None,
+                temperature=0.5,
+            )
+            answer = response.choices[0].text
+        except Exception as e:
+            print('Exception occurred while fetching from OpenAI: ', e)
 
     else:
         print("No matching question found. Asking OpenAI...\n")
@@ -144,22 +145,23 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     print('Starting up bot...')
 
-    while True:
-        text = input('> ')
-        get_response(text)
+    # Uncomment when testing from command line, and comment out everything below
+    # while True:
+    #     text = input('> ')
+    #     get_response(text)
+    
+    application = ApplicationBuilder().token(TELEGROM_BOT_TOKEN).build()
 
-    # application = ApplicationBuilder().token(TELEGROM_BOT_TOKEN).build()
+    # Add support for '/start' command
+    start_handler = CommandHandler('start', handle_start)
+    application.add_handler(start_handler)
 
-    # # Add support for '/start' command
-    # start_handler = CommandHandler('start', handle_start)
-    # application.add_handler(start_handler)
+    # Add message handler for all regular messages
+    message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
+    application.add_handler(message_handler)
 
-    # # Add message handler for all regular messages
-    # message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
-    # application.add_handler(message_handler)
-
-    # # Run the bot
-    # application.run_polling()
+    # Run the bot
+    application.run_polling()
 
 
 if __name__ == '__main__':
