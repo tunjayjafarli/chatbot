@@ -18,7 +18,7 @@ TELEGROM_BOT_TOKEN = '6054419619:AAH3mx2PpvdZX1wnsPL09IF2jJIdRuFpF78'
 openai.api_key = "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"
 
 # FAQ file to load data from - TODO: read from local database
-FAQ_FILE = 'binstarter_faq.xlsx'
+FAQ_FILE = 'data/binstarter_faq.xlsx'
 
 
 def open_file(file_name):
@@ -82,6 +82,7 @@ def get_response(query):
 
         print('OPENAI PROMPT: ', prompt)
 
+        # Fetch from OpenAI
         try:
             response = openai.Completion.create(
                 engine="text-davinci-003",
@@ -96,18 +97,8 @@ def get_response(query):
             print('Exception occurred while fetching from OpenAI: ', e)
 
     else:
-        print("No matching question found. Asking OpenAI...\n")
-
-        # Fetch from OpenAI
-        response = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=f"{query}",
-            max_tokens=1024,
-            n=1,
-            stop=None,
-            temperature=0.5,
-        )
-        answer = response.choices[0].text
+        print("No matches found.\n")
+        answer = "Unfortunately I couldn't find the answer to your question. Please try rewording your question!"
         
     print("\nAnswer: ", answer)
     print("----------------------------")
