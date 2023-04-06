@@ -15,7 +15,7 @@ from thefuzz import process
 TELEGROM_BOT_TOKEN = '6054419619:AAH3mx2PpvdZX1wnsPL09IF2jJIdRuFpF78'
 
 # OpenAI API
-openai.api_key = "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"
+openai.api_key = "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"
 
 # FAQ file to load data from - TODO: read from local database
 FAQ_FILE = 'data/binstarter_faq.xlsx'
@@ -35,6 +35,24 @@ def open_file(file_name):
         print('Unsupported file type.')
 
 
+def get_openai_response(prompt):
+    '''
+    Send request to OpenAI Completion API and return the response.
+    '''
+    # TODO: OpenAI request parameters
+    try:
+        response = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=f"{prompt}",
+            max_tokens=2048,
+            n=1,
+            stop=None,
+            temperature=0.5,
+        )
+        return response.choices[0].text
+    except Exception as e:
+        print('Exception occurred while fetching from OpenAI: ', e)
+
 def get_response(query):
     '''
     Search for question & answer in the provided document.
@@ -47,14 +65,13 @@ def get_response(query):
     df = open_file(FAQ_FILE)
     question_list = df['Question'].tolist()
     answer_list = df['Answer'].tolist()
-
+    
     matching_questions = process.extract(
         query=query, 
         choices=question_list, 
         scorer=fuzz.token_set_ratio, 
         limit=5
     )
-
     matching_answers = process.extract(
         query=query,
         choices=answer_list,
@@ -63,47 +80,35 @@ def get_response(query):
     )
 
     context_data = set()
+    response = None
 
     if matching_questions or matching_answers:
-
         for q, _ in matching_questions:
             answer = df.loc[df['Question'] == q].iloc[0]['Answer']
             if type(answer) == str:
                 context_data.add(answer)
 
         for ans, _ in matching_answers:
-            if type(answer) == str:
+            if type(ans) == str:
                 context_data.add(ans)
 
         context = '\n'.join(context_data)
         header = 'Answer the question as truthfully as possible using the provided context below.'
         # , and if the answer is not contained within the text below, say "I dont know."
         prompt = header + "\n\n" + context + "\n\n Q: " + query + "\n A:"
-
         print('OPENAI PROMPT: ', prompt)
-
-        # Fetch from OpenAI
-        try:
-            response = openai.Completion.create(
-                engine="text-davinci-003",
-                prompt=f"{prompt}",
-                max_tokens=1024,
-                n=1,
-                stop=None,
-                temperature=0.5,
-            )
-            answer = response.choices[0].text
-        except Exception as e:
-            print('Exception occurred while fetching from OpenAI: ', e)
-
-    else:
-        print("No matches found.\n")
-        answer = "Unfortunately I couldn't find the answer to your question. Please try rewording your question!"
         
-    print("\nAnswer: ", answer)
+        response = get_openai_response(prompt)
+    else:
+        print("No matches found in the provided faq file.\n")
+    
+    if not response:
+        response = "Unfortunately I couldn't find the answer to your question. Please try rewording your question!"
+        
+    print("\nAnswer: ", response)
     print("----------------------------")
 
-    return answer
+    return response
 
 
 async def handle_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -130,6 +135,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if response:
         await update.message.reply_text(response)
+        
+    # TODO: else case: inform the user when there is no response instead of not replying at all 
 
 
 # Run the program
@@ -137,22 +144,22 @@ def main():
     print('Starting up bot...')
 
     # Uncomment when testing from command line, and comment out everything below
-    # while True:
-    #     text = input('> ')
-    #     get_response(text)
+    while True:
+        text = input('> ')
+        get_response(text)
     
-    application = ApplicationBuilder().token(TELEGROM_BOT_TOKEN).build()
+    # application = ApplicationBuilder().token(TELEGROM_BOT_TOKEN).build()
 
-    # Add support for '/start' command
-    start_handler = CommandHandler('start', handle_start)
-    application.add_handler(start_handler)
+    # # Add support for '/start' command
+    # start_handler = CommandHandler('start', handle_start)
+    # application.add_handler(start_handler)
 
-    # Add message handler for all regular messages
-    message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
-    application.add_handler(message_handler)
+    # # Add message handler for all regular messages
+    # message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
+    # application.add_handler(message_handler)
 
-    # Run the bot
-    application.run_polling()
+    # # Run the bot
+    # application.run_polling()
 
 
 if __name__ == '__main__':
