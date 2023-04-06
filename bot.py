@@ -43,7 +43,6 @@ def get_response(query):
     if not query or query == '' or len(query) < 2:
         print("Enter a valid question\n")
         return "Please ask me a valid question so that I can get you the answers you need!"
-        return "Please ask me a valid question so that I can get you the answers you need!"
 
     df = open_file(FAQ_FILE)
     question_list = df['Question'].tolist()
@@ -55,20 +54,7 @@ def get_response(query):
         scorer=fuzz.token_set_ratio, 
         limit=5
     )
-    answer_list = df['Answer'].tolist()
 
-    matching_questions = process.extract(
-        query=query, 
-        choices=question_list, 
-        scorer=fuzz.token_set_ratio, 
-        limit=5
-    )
-
-    matching_answers = process.extract(
-        query=query,
-        choices=answer_list,
-        scorer=fuzz.token_set_ratio,
-        limit=5
     matching_answers = process.extract(
         query=query,
         choices=answer_list,
@@ -114,7 +100,6 @@ def get_response(query):
         print("No matches found.\n")
         answer = "Unfortunately I couldn't find the answer to your question. Please try rewording your question!"
         
-    print("\nAnswer: ", answer)
     print("\nAnswer: ", answer)
     print("----------------------------")
 
