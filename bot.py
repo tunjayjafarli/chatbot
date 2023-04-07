@@ -41,6 +41,8 @@ def get_openai_response(prompt):
     '''
     # TODO: OpenAI request parameters
     try:
+        print('OPENAI PROMPT: ', prompt)
+
         response = openai.Completion.create(
             engine="text-davinci-003",
             prompt=f"{prompt}",
@@ -49,9 +51,33 @@ def get_openai_response(prompt):
             stop=None,
             temperature=0.5,
         )
+
+        print('OPENAI RESPONSE: ', response.choices[0].text)
         return response.choices[0].text
     except Exception as e:
         print('Exception occurred while fetching from OpenAI: ', e)
+
+
+def translate(text):
+    '''
+    Send request to OpenAI to translate the given text to English.
+    '''
+    translate_prompt = '''
+    First, correct the grammatical mistakes in this sentence and answer the following:\n
+    1. Determine the language
+    2. Translate to English
+    \n{}'''.format(text)
+    
+    response = get_openai_response(translate_prompt)
+
+    if response:
+        results = str(response).strip().split("\n")
+        language = results[0].split(':')[1].strip()
+        translation = results[1].split(':')[1].strip()
+        
+        return language, translation 
+    else:
+        return None, None
 
 def get_response(query):
     '''
@@ -65,7 +91,7 @@ def get_response(query):
     df = open_file(FAQ_FILE)
     question_list = df['Question'].tolist()
     answer_list = df['Answer'].tolist()
-    
+
     matching_questions = process.extract(
         query=query, 
         choices=question_list, 
@@ -93,10 +119,9 @@ def get_response(query):
                 context_data.add(ans)
 
         context = '\n'.join(context_data)
-        header = 'Answer the question as truthfully as possible using the provided context below.'
-        # , and if the answer is not contained within the text below, say "I dont know."
+        header = 'Answer the question as truthfully as possible using the provided context.'
+        # , and if the answer is not contained within the context, say "I dont know."
         prompt = header + "\n\n" + context + "\n\n Q: " + query + "\n A:"
-        print('OPENAI PROMPT: ', prompt)
         
         response = get_openai_response(prompt)
     else:
@@ -104,8 +129,8 @@ def get_response(query):
     
     if not response:
         response = "Unfortunately I couldn't find the answer to your question. Please try rewording your question!"
-        
-    print("\nAnswer: ", response)
+        print("\nAnswer: ", response)
+    
     print("----------------------------")
 
     return response
@@ -118,7 +143,7 @@ async def handle_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Get basic info of the incoming message
     chat_type = update.message.chat.type
-    message_text = str(update.message.text).lower()
+    message_text = str(update.message.text)
     response = ''
 
     # Print a log for debugging
@@ -127,8 +152,11 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Respond to group messages only if users mention the bot directly
     if chat_type == 'group' or chat_type == 'supergroup':
         # TODO: get the bot name programmaticaly since it will be different for each customer
-        if 'bot' in message_text or '@freebot1_bot_bot' in message_text:
+        if '@freebot1_bot_bot' in message_text:
             new_text = message_text.replace('@freebot1_bot_bot', '').strip()
+            response = get_response(new_text)
+        if '@bot' in message_text:
+            new_text = message_text.replace('@bot', '').strip()
             response = get_response(new_text)
     else:
         response = get_response(message_text)
@@ -144,22 +172,22 @@ def main():
     print('Starting up bot...')
 
     # Uncomment when testing from command line, and comment out everything below
-    while True:
-        text = input('> ')
-        get_response(text)
+    # while True:
+    #     text = input('> ')
+    #     get_response(text)
     
-    # application = ApplicationBuilder().token(TELEGROM_BOT_TOKEN).build()
+    application = ApplicationBuilder().token(TELEGROM_BOT_TOKEN).build()
 
-    # # Add support for '/start' command
-    # start_handler = CommandHandler('start', handle_start)
-    # application.add_handler(start_handler)
+    # Add support for '/start' command
+    start_handler = CommandHandler('start', handle_start)
+    application.add_handler(start_handler)
 
-    # # Add message handler for all regular messages
-    # message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
-    # application.add_handler(message_handler)
+    # Add message handler for all regular messages
+    message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
+    application.add_handler(message_handler)
 
-    # # Run the bot
-    # application.run_polling()
+    # Run the bot
+    application.run_polling()
 
 
 if __name__ == '__main__':
