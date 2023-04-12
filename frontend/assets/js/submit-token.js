@@ -3,7 +3,7 @@ function submitToken() {
         var token = document.getElementById("token")
         if (token && token.value.length == 46)
         {
-            console.log(document.getElementById("token").value);
+            console.log(token.value);
             error.textContent = ""
         } 
         else 
