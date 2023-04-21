@@ -15,10 +15,10 @@ from thefuzz import process
 TELEGROM_BOT_TOKEN = '6054419619:AAH3mx2PpvdZX1wnsPL09IF2jJIdRuFpF78'
 
 # OpenAI API
-openai.api_key = "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"
+openai.api_key = "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"
 
 # FAQ file to load data from - TODO: read from local database
-FAQ_FILE = 'binstarter_faq.xlsx'
+FAQ_FILE = 'data/binstarter_faq.xlsx'
 
 
 def open_file(file_name):
@@ -34,6 +34,66 @@ def open_file(file_name):
     else:
         print('Unsupported file type.')
 
+def get_openai_prompt(context_data, question):
+    header = 'Answer the question as truthfully as possible using the provided context.' # , and if the answer is not contained within the context, say "I dont know."
+    context = '\n'.join(context_data)
+    prompt = header + "\n\n" + context + "\n\n Q: " + question + "\n A:"
+
+    return prompt
+
+def get_openai_response(prompt):
+    '''
+    Send request to OpenAI Completion API and return the response.
+    '''
+    # TODO: OpenAI request parameters
+    try:
+        print('OPENAI PROMPT: ', prompt)
+
+        response = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=f"{prompt}",
+            max_tokens=2048,
+            n=1,
+            stop=None,
+            temperature=0.5,
+        )
+
+        print('OPENAI RESPONSE: ', response.choices[0].text.strip())
+        print('TOKEN USAGE: ', response.usage) # "usage": { "prompt_tokens": 5, "completion_tokens": 5, "total_tokens": 10 }
+        return response.choices[0].text.strip()
+    except Exception as e:
+        print('Exception occurred while fetching from OpenAI: ', e)
+
+def translate(text):
+    '''
+    Send request to OpenAI to translate the given text to English.
+    '''
+    translate_prompt = '''Correct the grammatical mistakes in this sentence and translate to English if it's in another language:
+    \n{}'''.format(text)
+    
+    response = get_openai_response(translate_prompt)
+
+    return response
+
+def translate_v2(text):
+    '''
+    Send request to OpenAI to detect the language of question and translate it to English.
+    '''
+    translate_prompt = '''
+    First, correct the grammatical mistakes in this sentence and answer the following:\n
+    1. Determine the language
+    2. Translate to English
+    \n{}'''.format(text)
+    
+    response = get_openai_response(translate_prompt)
+
+    if response:
+        results = str(response).strip().split("\n")
+        language = results[0].split(':')[1].strip()
+        translation = results[1].split(':')[1].strip()
+        return language, translation 
+    else:
+        return None, None
 
 def get_response(query):
     '''
@@ -42,41 +102,53 @@ def get_response(query):
     '''
     if not query or query == '' or len(query) < 2:
         print("Enter a valid question\n")
-        return "Enter a valid question."
+        return "Please ask me a valid question so that I can get you the answers you need!"
+    
+    translated_query = translate(query)
 
     df = open_file(FAQ_FILE)
     question_list = df['Question'].tolist()
+    answer_list = df['Answer'].tolist()
 
-    result = process.extractOne(
-        query, 
-        question_list, 
-        scorer=fuzz.partial_token_sort_ratio, 
-        score_cutoff=70
+    matching_questions = process.extract(
+        query=translated_query, 
+        choices=question_list, 
+        scorer=fuzz.token_set_ratio, 
+        limit=3
+    )
+    matching_answers = process.extract(
+        query=translated_query,
+        choices=answer_list,
+        scorer=fuzz.token_set_ratio,
+        limit=3
     )
 
-    if result is not None and result[0] and len(result[0]) > 3:
-        matchingQuestion, score = result
-        answer = df.loc[df['Question'] == matchingQuestion].iloc[0]['Answer']
+    context_data = set()
+    response = None
 
-        print("Question found: ", matchingQuestion, "Score: ", score)
-    else:
-        print("No matching question found. Asking OpenAI...\n")
+    if matching_questions or matching_answers:
+        for q, _ in matching_questions:
+            answer = df.loc[df['Question'] == q].iloc[0]['Answer']
+            if type(answer) == str:
+                context_data.add(answer)
 
-        # Fetch from OpenAI
-        response = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=f"{query}",
-            max_tokens=1024,
-            n=1,
-            stop=None,
-            temperature=0.5,
-        )
-        answer = response.choices[0].text
+        for ans, _ in matching_answers:
+            if type(ans) == str:
+                context_data.add(ans)
+
         
-    print("Answer: ", answer)
+        prompt = get_openai_prompt(context_data, query)
+        response = get_openai_response(prompt)
+    else:
+        print("No matches found in the provided faq file.\n")
+    
+    if not response:
+        response = "Unfortunately I couldn't find the answer to your question. Please try rewording your question!"
+        print("\nAnswer: ", response)
+    
     print("----------------------------")
 
-    return answer
+    return response
 
 
 async def handle_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -86,7 +158,7 @@ async def handle_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Get basic info of the incoming message
     chat_type = update.message.chat.type
-    message_text = str(update.message.text).lower()
+    message_text = str(update.message.text)
     response = ''
 
     # Print a log for debugging
@@ -94,21 +166,31 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Respond to group messages only if users mention the bot directly
     if chat_type == 'group' or chat_type == 'supergroup':
-        # TODO: get the bot name programmaticaly since it will be different for each customer
-        if 'bot' in message_text or '@freebot1_bot_bot' in message_text:
+        # TODO: get the bot name programmaticaly since it will be different for each bot
+        if '@freebot1_bot_bot' in message_text:
             new_text = message_text.replace('@freebot1_bot_bot', '').strip()
+            response = get_response(new_text)
+        if '@bot' in message_text:
+            new_text = message_text.replace('@bot', '').strip()
             response = get_response(new_text)
     else:
         response = get_response(message_text)
 
     if response:
         await update.message.reply_text(response)
+        
+    # TODO: else case: inform the user when there is no response instead of not replying at all 
 
 
 # Run the program
 def main():
     print('Starting up bot...')
 
+    # Uncomment when testing from command line, and comment out everything below
+    # while True:
+    #     text = input('> ')
+    #     get_response(text)
+    
     application = ApplicationBuilder().token(TELEGROM_BOT_TOKEN).build()
 
     # Add support for '/start' command
