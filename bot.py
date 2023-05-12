@@ -8,8 +8,8 @@ from telegram.ext import CommandHandler
 from telegram.ext import ContextTypes
 from telegram.ext import MessageHandler
 
-from thefuzz import fuzz
-from thefuzz import process
+from search import ask
+from search import get_embeddings
 
 # Telegram bot
 TELEGROM_BOT_TOKEN = '6054419619:AAH3mx2PpvdZX1wnsPL09IF2jJIdRuFpF78'
@@ -19,6 +19,10 @@ openai.api_key = "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"
 
 # FAQ file to load data from - TODO: read from local database
 FAQ_FILE = 'data/binstarter_faq.xlsx'
+
+# Load the embeddings
+EMBEDDINGS_FILE = "data/embeddings.csv"
+df = get_embeddings(EMBEDDINGS_FILE)
 
 
 def open_file(file_name):
@@ -59,7 +63,7 @@ def get_openai_response(prompt):
         )
 
         print('OPENAI RESPONSE: ', response.choices[0].text.strip())
-        print('TOKEN USAGE: ', response.usage) # "usage": { "prompt_tokens": 5, "completion_tokens": 5, "total_tokens": 10 }
+        # print('TOKEN USAGE: ', response.usage) # "usage": { "prompt_tokens": 5, "completion_tokens": 5, "total_tokens": 10 }
         return response.choices[0].text.strip()
     except Exception as e:
         print('Exception occurred while fetching from OpenAI: ', e)
@@ -104,43 +108,9 @@ def get_response(query):
         print("Enter a valid question\n")
         return "Please ask me a valid question so that I can get you the answers you need!"
     
-    translated_query = translate(query)
-
-    df = open_file(FAQ_FILE)
-    question_list = df['Question'].tolist()
-    answer_list = df['Answer'].tolist()
-
-    matching_questions = process.extract(
-        query=translated_query, 
-        choices=question_list, 
-        scorer=fuzz.token_set_ratio, 
-        limit=3
-    )
-    matching_answers = process.extract(
-        query=translated_query,
-        choices=answer_list,
-        scorer=fuzz.token_set_ratio,
-        limit=3
-    )
-
-    context_data = set()
-    response = None
-
-    if matching_questions or matching_answers:
-        for q, _ in matching_questions:
-            answer = df.loc[df['Question'] == q].iloc[0]['Answer']
-            if type(answer) == str:
-                context_data.add(answer)
-
-        for ans, _ in matching_answers:
-            if type(ans) == str:
-                context_data.add(ans)
-
-        
-        prompt = get_openai_prompt(context_data, query)
-        response = get_openai_response(prompt)
-    else:
-        print("No matches found in the provided faq file.\n")
+    # translated_query = translate(query)
+    
+    response = ask(query=query, df=df, print_message=True)
     
     if not response:
         response = "Unfortunately I couldn't find the answer to your question. Please try rewording your question!"
