@@ -4,13 +4,12 @@ import pandas as pd  # for storing text and embeddings data
 import tiktoken  # for counting tokens
 from scipy import spatial  # for calculating vector similarities for search
 
+from constants import EMBEDDING_MODEL
+from constants import GPT_MODEL
+from constants import OPENAI_API_KEY
 
-# OpenAI models
-EMBEDDING_MODEL = "text-embedding-ada-002"
-GPT_MODEL = "gpt-3.5-turbo"
-
-# OpenAI API
-openai.api_key = "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"
+# Set the OpenAI API key
+openai.api_key = OPENAI_API_KEY
 
 # ********* 1. Prepare search data *********
 

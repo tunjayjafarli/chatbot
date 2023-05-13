@@ -1,16 +1,14 @@
-# imports
-import numpy as np
 import pandas as pd  # for DataFrames to store article sections and embeddings
 import tiktoken  # for counting tokens
 import openai  # for generating embeddings
 from itertools import islice
 from tenacity import retry, wait_random_exponential, stop_after_attempt, retry_if_not_exception_type
 
-
-EMBEDDING_MODEL = 'text-embedding-ada-002'
-EMBEDDING_CTX_LENGTH = 8191
-EMBEDDING_ENCODING = 'cl100k_base'
-OPENAI_API_KEY = "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"
+from constants import OPENAI_API_KEY
+from constants import EMBEDDING_MODEL
+from constants import EMBEDDING_CTX_LENGTH
+from constants import EMBEDDING_ENCODING
+from constants import EMBEDDINGS_FILE
 
 
 # let's make sure to not retry on an invalid request, because that is what we want to demonstrate
@@ -42,6 +40,7 @@ def len_safe_get_embedding(text, model=EMBEDDING_MODEL, max_tokens=EMBEDDING_CTX
         chunk_embeddings.append(get_embedding(chunk, model=model))
     return chunk_embeddings
 
+
 def get_embeddings(chunks, model=EMBEDDING_MODEL, max_tokens=EMBEDDING_CTX_LENGTH, encoding_name=EMBEDDING_ENCODING):
     chunk_embeddings = []
     for chunk in chunks:
@@ -52,7 +51,7 @@ def get_embeddings(chunks, model=EMBEDDING_MODEL, max_tokens=EMBEDDING_CTX_LENGT
 def main():
     print('Running embeddings.py...')
 
-    # OpenAI API
+    # set the OpenAI API key
     openai.api_key = OPENAI_API_KEY
 
     with open('data/knowledge_base.txt', 'r') as file:
@@ -62,9 +61,7 @@ def main():
     embeddings = get_embeddings(knowledge_base_strings)
 
     df = pd.DataFrame({"text": knowledge_base_strings, "embedding": embeddings})
-
-    embeddings_save_path = "data/embeddings.csv"
-    df.to_csv(embeddings_save_path, index=False)
+    df.to_csv(EMBEDDINGS_FILE, index=False)
 
     print('Finished generating embeddings')
 
