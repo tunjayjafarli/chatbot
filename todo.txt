@@ -1,6 +1,6 @@
 Chat bot project action items:
-- [ ] Add support to answer questions in other languages
-- [ ] Use knowledge base instead of FAQ’s document - this will be input field on the website
+- [+] Add support to answer questions in other languages
+- [+] Use knowledge base instead of FAQ’s document - this will be input field on the website
 - [ ] Optimization: Translate data to each language once and save in the database
 - [ ] Investigate: Is it possible to set OpenAI billing setting per API key?
 - [ ] Investigate: Can OpenAI scan websites to get the knowledge base?
