@@ -56,7 +56,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Respond to group messages only if users mention the bot directly
     if chat_type == 'group' or chat_type == 'supergroup':
         # TODO: get the bot name programmaticaly since it will be different for each bot
-        if '@freebot1_bot_bot' in message_text:
+        if '@binstarter_bot' in message_text:
             new_text = message_text.replace('@freebot1_bot_bot', '').strip()
             response = get_response(new_text)
         if '@bot' in message_text:
