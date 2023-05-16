@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="pingback" href="http://localhost/wordpress/xmlrpc.php" />
-    <title>About</title>
+    <title>Train Bot &#8211; WiseGPT</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel="alternate" type="application/rss+xml" title="WiseGPT &raquo; beslemesi"
         href="http://localhost/wordpress/feed/" />
@@ -14,6 +14,7 @@
         href="http://localhost/wordpress/comments/feed/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css" />
     <script type="text/javascript">
         window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/wordpress\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2"}};
 /*! This file is auto-generated */
@@ -31,6 +32,77 @@
             vertical-align: -0.1em !important;
             background: none !important;
             padding: 0 !important;
+        }
+    </style>
+    <style>
+         .input-container-box {
+          position: relative;
+          padding: 20px;
+          right: 1%;
+        }
+
+        .input-container-box textarea {
+          font-size: 16px;
+          padding: 10px;
+          border: 2px solid #ccc;
+          border-radius: 5px;
+          width: 100%;
+          box-sizing: border-box;
+          -webkit-transition: 0.2s all;
+          transition: 0.2s all;
+          resize: none;
+        }
+
+        .input-container-box label {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          -webkit-transition: 0.2s all;
+          transition: 0.2s all;
+          pointer-events: none;
+          color: #777;
+        }
+
+
+        .input-container-box textarea:focus{
+            outline: 0;
+        }
+
+        .input-container-box.success textarea {
+                border-color: #09c372;
+        }
+        .input-container-box.error textarea {
+                border-color: #ff3860;
+        }
+
+        .input-container-box .error {
+            color: #ff3860;
+            font-size: 14px;
+            height: 13px;
+
+        }
+        .button-2 {
+          background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+          border: 0;
+          position: relative;
+          border-radius: 12px;
+          color: #FFFFFF;
+          cursor: pointer;
+          display: inline-block;
+          font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 2.5;
+          outline: transparent;
+          padding: 0 1rem;
+          text-align: center;
+          text-decoration: none;
+          transition: box-shadow .2s ease-in-out;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          white-space: nowrap;
+          right:-40%;
         }
     </style>
     <link rel='stylesheet' id='wp-block-library-css' href='./css/dist-block-library-style.min.css' type='text/css'
@@ -551,54 +623,54 @@
         content="Powered by Slider Revolution 6.6.11 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
     <script>
         function setREVStartSize(e){
-			//window.requestAnimationFrame(function() {
-				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
-				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
-				try {
-					var pw = document.getElementById(e.c).parentNode.offsetWidth,
-						newh;
-					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
-					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
-					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
-					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
-					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
-					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
-					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
-					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
-					if(e.layout==="fullscreen" || e.l==="fullscreen")
-						newh = Math.max(e.mh,window.RSIH);
-					else{
-						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
-						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
-						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
-						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
-						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
-											
-						var nl = new Array(e.rl.length),
-							ix = 0,
-							sl;
-						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
-						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
-						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
-						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
-						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
-						sl = nl[0];
-						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
-						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
-						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
-					}
-					var el = document.getElementById(e.c);
-					if (el!==null && el) el.style.height = newh+"px";
-					el = document.getElementById(e.c+"_wrapper");
-					if (el!==null && el) {
-						el.style.height = newh+"px";
-						el.style.display = "block";
-					}
-				} catch(e){
-					console.log("Failure at Presize of Slider:" + e)
-				}
-			//});
-		  };
+            //window.requestAnimationFrame(function() {
+                window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+                window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+                try {
+                    var pw = document.getElementById(e.c).parentNode.offsetWidth,
+                        newh;
+                    pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+                    e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+                    e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+                    e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+                    e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+                    e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+                    e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+                    e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+                    if(e.layout==="fullscreen" || e.l==="fullscreen")
+                        newh = Math.max(e.mh,window.RSIH);
+                    else{
+                        e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+                        for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+                        e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+                        e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+                        for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+                                            
+                        var nl = new Array(e.rl.length),
+                            ix = 0,
+                            sl;
+                        e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+                        e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+                        e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+                        e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+                        for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+                        sl = nl[0];
+                        for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+                        var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+                        newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+                    }
+                    var el = document.getElementById(e.c);
+                    if (el!==null && el) el.style.height = newh+"px";
+                    el = document.getElementById(e.c+"_wrapper");
+                    if (el!==null && el) {
+                        el.style.height = newh+"px";
+                        el.style.display = "block";
+                    }
+                } catch(e){
+                    console.log("Failure at Presize of Slider:" + e)
+                }
+            //});
+          };
     </script>
     <style type="text/css" data-type="vc_shortcodes-custom-css">
         .vc_custom_1647978164651 {
@@ -1009,24 +1081,23 @@
                                                 target="_self" href="./index.html"
                                                 data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Home</span></a>
                                         </li>
-                                         <li itemscope="itemscope"
-                                            itemtype="https://www.schema.org/SiteNavigationElement" 
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
+                                        <li itemscope="itemscope"
+                                            itemtype="https://www.schema.org/SiteNavigationElement"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-3409 menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
                                             <a title="Setup"
                                                 class="font-weight-bold pix-nav-link text-heading-default nav-link animate-in"
-                                                target="_self"
-                                                href="./setup.html"
+                                                target="_self" href="./setup.html"
                                                 data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Setup</span></a>
                                         </li>
                                         <li itemscope="itemscope"
                                             itemtype="https://www.schema.org/SiteNavigationElement"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-3409 menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3409 current_page_item active menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
                                             <a title="Train Bot"
                                                 class="font-weight-bold pix-nav-link text-heading-default nav-link animate-in"
                                                 target="_self" href="./train-bot.html"
                                                 data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Train Bot</span></a>
                                         </li>
-                                         <li itemscope="itemscope"
+                                        <li itemscope="itemscope"
                                             itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-3430"
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
                                             <a title="Contact"
@@ -1037,7 +1108,7 @@
                                         </li>
                                         <li itemscope="itemscope"
                                             itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-3411"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3409 current_page_item active menu-item-3411 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
+                                            class="menu-item menu-item-type-post_type menu-item-object-page page-item-3409 menu-item-3411 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
                                             <a title="About"
                                                 class="font-weight-bold pix-nav-link text-heading-default nav-link animate-in"
                                                 target="_self" href="./about.html"
@@ -1094,18 +1165,16 @@
                                     target="_self" href="./index.html"
                                     data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Home</span></a>
                             </li>
+                            <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3430 page_item page-item-3409 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
+                                <a title="Setup"
+                                    class="font-weight-bold pix-nav-link text-heading-default nav-link animate-in"
+                                    target="_self" href="./setup.html"
+                                    data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Setup</span></a>
+                            </li>
                             <li itemscope="itemscope"
                                             itemtype="https://www.schema.org/SiteNavigationElement"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
-                                            <a title="Setup"
-                                                class="font-weight-bold pix-nav-link text-heading-default nav-link animate-in"
-                                                target="_self"
-                                                href="./setup.html"
-                                                data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Setup</span></a>
-                                </li>
-                                <li itemscope="itemscope"
-                                            itemtype="https://www.schema.org/SiteNavigationElement"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-3409 menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3409 current_page_item active menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
                                             <a title="Train Bot"
                                                 class="font-weight-bold pix-nav-link text-heading-default nav-link animate-in"
                                                 target="_self" href="./train-bot.html"
@@ -1118,9 +1187,8 @@
                                     target="_self" href="http://localhost/wordpress/minimal-contact-wpbakery/"
                                     data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Contact</span></a>
                             </li>
-
                             <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
-                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3409 current_page_item active menu-item-3411 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3411 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
                                 <a title="About"
                                     class="font-weight-bold pix-nav-link text-heading-default nav-link animate-in"
                                     target="_self" href="./about.html"
@@ -1133,7 +1201,7 @@
                                     target="_self" href="http://localhost/wordpress/404-page/"
                                     data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">404 Page</span></a>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </nav>
@@ -1160,27 +1228,6 @@
                                                             <div class="wpb_wrapper">
                                                                 <div
                                                                     class="d-inline-block2 d-flex flex-column flex-sm-row w-100 text-center2 align-items-center2 justify-content-center justify-content-sm-center   vc_custom_1646094894684">
-                                                                    <div
-                                                                        class="pix-lg-circles d-inline-flex align-items-center align-middle justify-content-center justify-content-sm-center">
-                                                                        <a class="align-middle circle-item pix-mr-5 pix-bg-custom animate-in shadow-lg"
-                                                                            data-anim-type="pix-3d-right-in-big"
-                                                                            data-anim-delay="0" href="#"
-                                                                            data-toggle="tooltip"
-                                                                            data-placement="bottom"
-                                                                            title="Powerful features"><img src="./images/2021-11-image-1-460x460.jpg" srcset="./images/2021-11-image-1-300x300.jpg 300w, ./images/2021-11-image-1-150x150.jpg 150w, ./images/2021-11-image-1-768x768.jpg 768w, ./images/2021-11-image-1-400x400.jpg 400w, ./images/2021-11-image-1-75x75.jpg 75w, ./images/2021-11-image-1-460x460.jpg 460w, ./images/2021-11-image-1.jpg 800w" sizes="(max-width: 800px) 100vw, 800px" width="60" height="60" class="rounded-circle bg-white" loading="lazy"  alt="" /></a><a
-                                                                            class="align-middle circle-item pix-mr-5 pix-bg-custom animate-in shadow-lg"
-                                                                            data-anim-type="pix-3d-right-in-big"
-                                                                            data-anim-delay="100" href="#"
-                                                                            data-toggle="tooltip"
-                                                                            data-placement="bottom"
-                                                                            title="Easy to use"><img src="./images/2021-11-image-4-460x460.jpg" srcset="./images/2021-11-image-4-300x300.jpg 300w, ./images/2021-11-image-4-150x150.jpg 150w, ./images/2021-11-image-4-768x768.jpg 768w, ./images/2021-11-image-4-400x400.jpg 400w, ./images/2021-11-image-4-75x75.jpg 75w, ./images/2021-11-image-4-460x460.jpg 460w, ./images/2021-11-image-4.jpg 800w" sizes="(max-width: 800px) 100vw, 800px" width="60" height="60" class="rounded-circle bg-white" loading="lazy"  alt="" /></a><a
-                                                                            class="align-middle circle-item pix-mr-5 pix-bg-custom animate-in shadow-lg"
-                                                                            data-anim-type="pix-3d-right-in-big"
-                                                                            data-anim-delay="200" href="#"
-                                                                            data-toggle="tooltip"
-                                                                            data-placement="bottom"
-                                                                            title="Quality guaranteed "><img src="./images/2021-11-image-2-460x460.jpg" srcset="./images/2021-11-image-2-300x300.jpg 300w, ./images/2021-11-image-2-150x150.jpg 150w, ./images/2021-11-image-2-768x768.jpg 768w, ./images/2021-11-image-2-400x400.jpg 400w, ./images/2021-11-image-2-75x75.jpg 75w, ./images/2021-11-image-2-460x460.jpg 460w, ./images/2021-11-image-2.jpg 800w" sizes="(max-width: 800px) 100vw, 800px" width="60" height="60" class="rounded-circle bg-white" loading="lazy"  alt="" /></a>
-                                                                    </div>
                                                                 </div>
                                                                 <div
                                                                     class="pix-heading-el text-center  vc_custom_1636578198135">
@@ -1190,27 +1237,20 @@
                                                                             <div class="slide-in-container">
                                                                                 <h2 class="text-heading-default font-weight-bold display-3 animate-in heading-text el-title_custom_color mb-12"
                                                                                     style="" data-anim-type="fade-in-up"
-                                                                                    data-anim-delay="100">Meet our Team
+                                                                                    data-anim-delay="100">Train your Bot
                                                                                 </h2>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div
-                                                                    class="pix-el-text w-100 text-center  vc_custom_1646094584786">
-                                                                    <div class="d-inline-block"
-                                                                        style="max-width:550px;">
-                                                                        <p
-                                                                            class="text-20  text-body-default text-center">
-                                                                            <span class="text-body-default animate-in d-inline-block" data-anim-delay="150" data-anim-type="fade-in-up"></span>
-                                                                        </p>
-                                                                    </div>
+                                                                <div class="input-container-box">
+                                                                    <p style="font-size: 14px; text-align: left;font-weight: bold;">Knowledge Base</p>
+                                                                    <textarea id="knowledge-base-text" rows="10" cols="50" placeholder="Knowledge Base" ></textarea>
+                                                                    <div class="error"></div>
                                                                 </div>
-                                                                <div class="d-block w-100 text-center"><a href="#"
-                                                                        class="btn mb-2     text-white btn-gradient-primary d-inline-block pix-hover-item       animate-in pix-btn-div btn-lg"
-                                                                        data-anim-type="fade-in-up"
-                                                                        data-anim-delay="100"><i class="font-weight-bold pixicon-user-female-plus-2  pix-hover-left  mr-1"></i>
-                                                                        <span class="font-weight-bold" >Join our team</span></a>
+                                                                <div class="error"></div>
+                                                                <div class="d-block w-100 text-center">
+                                                                    <button class="button-2" role="button" id="knowledge_base_submitBtn" onclick="knowledge_base_submitBtn()">Train Bot</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1240,19 +1280,6 @@
                                                                                     fill="#000000"></path>
                                                                             </g>
                                                                         </svg>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="pix_numbers animate-math  vc_custom_1636590417923">
-                                                                    <div>
-                                                                        <h1
-                                                                            class="align-self-center text-center display-3">
-                                                                            <span class="font-weight-bold text-heading-default" style="">+</span><span class="number font-weight-bold text-heading-default" style="" data-duration="1000" data-to="200">0</span><span class="font-weight-bold text-heading-default" style="">%</span>
-                                                                        </h1>
-                                                                    </div>
-                                                                    <div class="w-100 text-center">
-                                                                        <h5 class="mt-0 text-heading-default font-weight-bold"
-                                                                            style="">Conversion rate increased</h5>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1285,99 +1312,42 @@
                                                                         </svg>
                                                                     </div>
                                                                 </div>
-                                                                <div
-                                                                    class="pix_numbers animate-math  vc_custom_1647986762375">
-                                                                    <div>
-                                                                        <h1
-                                                                            class="align-self-center text-center display-3">
-                                                                            <span class="font-weight-bold text-heading-default" style="">+</span><span class="number font-weight-bold text-heading-default" style="" data-duration="1000" data-to="26">0</span><span class="font-weight-bold text-heading-default" style="">K</span>
-                                                                        </h1>
-                                                                    </div>
-                                                                    <div class="w-100 text-center">
-                                                                        <h5 class="mt-0 text-heading-default font-weight-bold"
-                                                                            style="">Happy pixfort customers</h5>
-                                                                    </div>
-                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="wpb_column vc_column_container vc_col-sm-4 text-left">
-                                                        <div class="vc_column-inner">
-                                                            <div class="wpb_wrapper">
-                                                                <div id="duo-icon-33350396"
-                                                                    class="pix-icon text-center  vc_custom_1644360571836">
-                                                                    <div class="mr-32 d-inline-block text-gradient-primary animate-in"
-                                                                        data-anim-type="pix-3d-in" data-anim-delay="0"
-                                                                        style="width:86.4px;height:86.4px;position:relative;line-height:86.4px;text-align:center;">
-                                                                        <svg width="100%" height="100%"
-                                                                            viewbox="0 0 24 24" version="1.1"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                            <defs></defs>
-                                                                            <g stroke="none" stroke-width="1"
-                                                                                fill="none" fill-rule="evenodd">
-                                                                                <path
-                                                                                    d="M2,6 L21,6 C21.5522847,6 22,6.44771525 22,7 L22,17 C22,17.5522847 21.5522847,18 21,18 L2,18 C1.44771525,18 1,17.5522847 1,17 L1,7 C1,6.44771525 1.44771525,6 2,6 Z M11.5,16 C13.709139,16 15.5,14.209139 15.5,12 C15.5,9.790861 13.709139,8 11.5,8 C9.290861,8 7.5,9.790861 7.5,12 C7.5,14.209139 9.290861,16 11.5,16 Z"
-                                                                                    fill="#000000" opacity="0.3"
-                                                                                    transform="translate(11.500000, 12.000000) rotate(-345.000000) translate(-11.500000, -12.000000) ">
-                                                                                </path>
-                                                                                <path
-                                                                                    d="M2,6 L21,6 C21.5522847,6 22,6.44771525 22,7 L22,17 C22,17.5522847 21.5522847,18 21,18 L2,18 C1.44771525,18 1,17.5522847 1,17 L1,7 C1,6.44771525 1.44771525,6 2,6 Z M11.5,16 C13.709139,16 15.5,14.209139 15.5,12 C15.5,9.790861 13.709139,8 11.5,8 C9.290861,8 7.5,9.790861 7.5,12 C7.5,14.209139 9.290861,16 11.5,16 Z M11.5,14 C12.6045695,14 13.5,13.1045695 13.5,12 C13.5,10.8954305 12.6045695,10 11.5,10 C10.3954305,10 9.5,10.8954305 9.5,12 C9.5,13.1045695 10.3954305,14 11.5,14 Z"
-                                                                                    fill="#000000"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="pix_numbers animate-math  vc_custom_1636590508679">
-                                                                    <div>
-                                                                        <h1
-                                                                            class="align-self-center text-center display-3">
-                                                                            <span class="font-weight-bold text-heading-default" style="">+</span><span class="number font-weight-bold text-heading-default" style="" data-duration="1000" data-to="40">0</span><span class="font-weight-bold text-heading-default" style="">M</span>
-                                                                        </h1>
-                                                                    </div>
-                                                                    <div class="w-100 text-center">
-                                                                        <h5 class="mt-0 text-heading-default font-weight-bold"
-                                                                            style="">Amount of investments in 2022</h5>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div data-vc-full-width="true" data-vc-full-width-init="false"
-                                                    data-vc-stretch-content="true"
-                                                    class="vc_row wpb_row vc_row-fluid vc_row_visible custom-responsive-57829723 vc_custom_1647977527918 vc_row-no-padding">
-                                                    <div class="wpb_column vc_column_container vc_col-sm-12 text-left">
-                                                        <div class="vc_column-inner">
-                                                            <div class="wpb_wrapper">
-                                                                <div id="marquee-9211143"
-                                                                    class="pix-marquee-element d-flex">
-                                                                    <div class="pix-marquee">
-                                                                        <div class="marquee__inner" aria-hidden="true">
-                                                                            <div class="pix-marquee-item text-gray-2 pix-custom-text-size text-gradient-primary pix-text-image font-weight-bold heading-font"
-                                                                                style="background-image:url('./images/2022-02-marquee-1.jpg') !important;font-size:100px;">
-                                                                                15K Customers</div>
-                                                                            <div class="pix-marquee-item text-gray-2 pix-custom-text-size font-weight-bold heading-font"
-                                                                                style="font-size:100px;">• • •</div>
-                                                                            <div class="pix-marquee-item text-gray-2 pix-custom-text-size text-gradient-primary pix-text-image font-weight-bold heading-font"
-                                                                                style="background-image:url('./images/2022-02-marquee-2.jpg') !important;font-size:100px;">
-                                                                                20+ Designers</div>
-                                                                            <div class="pix-marquee-item text-gray-2 pix-custom-text-size font-weight-bold heading-font"
-                                                                                style="font-size:100px;">• • • </div>
-                                                                            <div class="pix-marquee-item text-gray-2 pix-custom-text-size text-gradient-primary pix-text-image font-weight-bold heading-font"
-                                                                                style="background-image:url('./images/2022-02-marquee-2.jpg') !important;font-size:100px;">
-                                                                                Made in France</div>
-                                                                            <div class="pix-marquee-item text-gray-2 pix-custom-text-size font-weight-bold heading-font"
-                                                                                style="font-size:100px;">• • • </div>
+                                                        <div
+                                                            class="wpb_column vc_column_container vc_col-sm-4 text-left">
+                                                            <div class="vc_column-inner">
+                                                                <div class="wpb_wrapper">
+                                                                    <div id="duo-icon-33350396"
+                                                                        class="pix-icon text-center  vc_custom_1644360571836">
+                                                                        <div class="mr-32 d-inline-block text-gradient-primary animate-in"
+                                                                            data-anim-type="pix-3d-in"
+                                                                            data-anim-delay="0"
+                                                                            style="width:86.4px;height:86.4px;position:relative;line-height:86.4px;text-align:center;">
+                                                                            <svg width="100%" height="100%"
+                                                                                viewbox="0 0 24 24" version="1.1"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                                <defs></defs>
+                                                                                <g stroke="none" stroke-width="1"
+                                                                                    fill="none" fill-rule="evenodd">
+                                                                                    <path
+                                                                                        d="M2,6 L21,6 C21.5522847,6 22,6.44771525 22,7 L22,17 C22,17.5522847 21.5522847,18 21,18 L2,18 C1.44771525,18 1,17.5522847 1,17 L1,7 C1,6.44771525 1.44771525,6 2,6 Z M11.5,16 C13.709139,16 15.5,14.209139 15.5,12 C15.5,9.790861 13.709139,8 11.5,8 C9.290861,8 7.5,9.790861 7.5,12 C7.5,14.209139 9.290861,16 11.5,16 Z"
+                                                                                        fill="#000000" opacity="0.3"
+                                                                                        transform="translate(11.500000, 12.000000) rotate(-345.000000) translate(-11.500000, -12.000000) ">
+                                                                                    </path>
+                                                                                    <path
+                                                                                        d="M2,6 L21,6 C21.5522847,6 22,6.44771525 22,7 L22,17 C22,17.5522847 21.5522847,18 21,18 L2,18 C1.44771525,18 1,17.5522847 1,17 L1,7 C1,6.44771525 1.44771525,6 2,6 Z M11.5,16 C13.709139,16 15.5,14.209139 15.5,12 C15.5,9.790861 13.709139,8 11.5,8 C9.290861,8 7.5,9.790861 7.5,12 C7.5,14.209139 9.290861,16 11.5,16 Z M11.5,14 C12.6045695,14 13.5,13.1045695 13.5,12 C13.5,10.8954305 12.6045695,10 11.5,10 C10.3954305,10 9.5,10.8954305 9.5,12 C9.5,13.1045695 10.3954305,14 11.5,14 Z"
+                                                                                        fill="#000000"></path>
+                                                                                </g>
+                                                                            </svg>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="vc_row-full-width vc_clearfix"></div>
+                                                    <div class="vc_row-full-width vc_clearfix"></div>
                                             </section>
                                             <div class="vc_row-full-width vc_clearfix"></div>
                                             <section data-vc-full-width="true" data-vc-full-width-init="false"
@@ -1394,12 +1364,7 @@
                                                                     <div class="animate-in  d-inline-block"
                                                                         data-anim-type="pix-3d-up-in-big"
                                                                         data-anim-delay="100">
-                                                                        <div class="tilt">
-                                                                            <div
-                                                                                class="pix-img-el    text-center d-inline-block  w-100 rounded-0">
-                                                                                <img class="card-img2 pix-img-elem rounded-0  h-1002" style="height:auto;" width="1200" height="800" srcset="./images/2020-02-post-image-1.jpg 1200w, ./images/2020-02-post-image-1-300x200.jpg 300w, ./images/2020-02-post-image-1-1024x683.jpg 1024w, ./images/2020-02-post-image-1-768x512.jpg 768w" sizes="(max-width: 1200px) 100vw, 1200px" src="./images/2020-02-post-image-1.jpg" alt="" />
-                                                                            </div>
-                                                                        </div>
+
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1410,28 +1375,9 @@
                                                         <div class="vc_column-inner  vc_custom_1636577540252">
                                                             <div class="wpb_wrapper">
                                                                 <div
-                                                                    class="pix-el-text w-100   vc_custom_1636577436161">
-                                                                    <p
-                                                                        class="text-20  text-gradient-primary  font-weight-bold secondary-font">
-                                                                        <span class="text-gradient-primary animate-in d-inline-block" data-anim-delay="0" data-anim-type="fade-in-up">Exclusive Events</span>
-                                                                    </p>
-                                                                </div>
-                                                                <div
                                                                     class="pix-heading-el text-left  vc_custom_1646094795014">
                                                                     <div>
-                                                                        <div class="slide-in-container">
-                                                                            <h3 class="text-heading-default font-weight-bold animate-in heading-text el-title_custom_color mb-12"
-                                                                                style="" data-anim-type="fade-in-up"
-                                                                                data-anim-delay="0">Advanced Features
-                                                                            </h3>
-                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div
-                                                                    class="pix-el-text w-100   vc_custom_1590460991977">
-                                                                    <p class="text-20  text-body-default">
-                                                                        <span class="text-body-default animate-in d-inline-block" data-anim-delay="200" data-anim-type="fade-in-up">Combine seamlessly fitting layouts, customize everything you want and switch components on the go.</span>
-                                                                    </p>
                                                                 </div>
                                                                 <div id="1647977657793-29163803-4695"
                                                                     class="pix-feature-el media  vc_custom_1646094816754">
@@ -1455,17 +1401,6 @@
                                                                                     fill="#000000" opacity="0.3"></path>
                                                                             </g>
                                                                         </svg>
-                                                                    </div>
-                                                                    <div class="media-body text-left">
-                                                                        <h6 class="font-weight-bold  secondary-font text-heading-default animate-in"
-                                                                            style="" data-anim-type="fade-in-up"
-                                                                            data-anim-delay="500">Unlimited
-                                                                            Possibilities</h6>
-                                                                        <div class="text-body-default text-18     animate-in"
-                                                                            style="padding-top:10px;"
-                                                                            data-anim-type="fade-in-up"
-                                                                            data-anim-delay="600">Create awesome and
-                                                                            great looking websites.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div id="1647977657794-f3a52b91-00c6"
@@ -1491,22 +1426,8 @@
                                                                             </g>
                                                                         </svg>
                                                                     </div>
-                                                                    <div class="media-body text-left">
-                                                                        <h6 class="font-weight-bold  secondary-font text-heading-default animate-in"
-                                                                            style="" data-anim-type="fade-in-up"
-                                                                            data-anim-delay="700">Made in France</h6>
-                                                                        <div class="text-body-default text-18     animate-in"
-                                                                            style="padding-top:10px;"
-                                                                            data-anim-type="fade-in-up"
-                                                                            data-anim-delay="800">High quality and
-                                                                            robust digital products.</div>
-                                                                    </div>
-                                                                </div><a href="#"
-                                                                    class="btn mb-2    vc_custom_1646094784250  text-white btn-gradient-primary d-inline-block pix-hover-item       animate-in btn-md"
-                                                                    target="_blank" rel="noopener"
-                                                                    data-anim-type="fade-in-right"
-                                                                    data-anim-delay="800"><span class="font-weight-bold" >Contact us for pricing</span>
-                                                                    <i class="font-weight-bold pixicon-angle-right  pix-hover-right  ml-1"></i></a>
+
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1519,29 +1440,7 @@
                                                         class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-offset-2 vc_col-lg-4 text-left">
                                                         <div class="vc_column-inner  vc_custom_1636577678034">
                                                             <div class="wpb_wrapper">
-                                                                <div
-                                                                    class="pix-el-text w-100   vc_custom_1646094763262">
-                                                                    <p
-                                                                        class="text-20  text-gradient-primary  font-weight-bold secondary-font">
-                                                                        <span class="text-gradient-primary animate-in d-inline-block" data-anim-delay="0" data-anim-type="fade-in-up">Premium Quality</span>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="pix-heading-el text-left  vc_custom_1646094752857">
-                                                                    <div>
-                                                                        <div class="slide-in-container">
-                                                                            <h3 class="text-heading-default font-weight-bold animate-in heading-text el-title_custom_color mb-12"
-                                                                                style="" data-anim-type="fade-in-up"
-                                                                                data-anim-delay="0">Made in France</h3>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="pix-el-text w-100   vc_custom_1590460991977">
-                                                                    <p class="text-20  text-body-default">
-                                                                        <span class="text-body-default animate-in d-inline-block" data-anim-delay="200" data-anim-type="fade-in-up">Combine seamlessly fitting layouts, customize everything you want and switch components on the go.</span>
-                                                                    </p>
-                                                                </div>
+
                                                                 <div id="1647977657802-dfc25db9-48d9"
                                                                     class="pix-feature-el media  vc_custom_1636577391193">
                                                                     <div class="mr-3 mw-100 text-gradient-primary animate-in"
@@ -1564,17 +1463,7 @@
                                                                             </g>
                                                                         </svg>
                                                                     </div>
-                                                                    <div class="media-body text-left">
-                                                                        <h6 class="font-weight-bold  secondary-font text-heading-default animate-in"
-                                                                            style="" data-anim-type="fade-in-up"
-                                                                            data-anim-delay="500">Unlimited
-                                                                            Possibilities</h6>
-                                                                        <div class="text-body-default text-18     animate-in"
-                                                                            style="padding-top:10px;"
-                                                                            data-anim-type="fade-in-up"
-                                                                            data-anim-delay="600">Create awesome and
-                                                                            great looking websites.</div>
-                                                                    </div>
+
                                                                 </div>
                                                                 <div id="1647977657802-32a58742-d43f"
                                                                     class="pix-feature-el media  vc_custom_1636577400669">
@@ -1599,447 +1488,27 @@
                                                                             </g>
                                                                         </svg>
                                                                     </div>
-                                                                    <div class="media-body text-left">
-                                                                        <h6 class="font-weight-bold  secondary-font text-heading-default animate-in"
-                                                                            style="" data-anim-type="fade-in-up"
-                                                                            data-anim-delay="700">Made in France</h6>
-                                                                        <div class="text-body-default text-18     animate-in"
-                                                                            style="padding-top:10px;"
-                                                                            data-anim-type="fade-in-up"
-                                                                            data-anim-delay="800">High quality and
-                                                                            robust digital products.</div>
-                                                                    </div>
-                                                                </div><a href="#pix_section_pricing"
-                                                                    class="btn mb-2    vc_custom_1636577423718  text-white btn-gradient-primary d-inline-block pix-hover-item       animate-in btn-md"
-                                                                    target="_blank" rel="noopener"
-                                                                    data-anim-type="fade-in-right"
-                                                                    data-anim-delay="800"><span class="font-weight-bold" >Learn more about pricing</span>
-                                                                    <i class="font-weight-bold pixicon-angle-right  pix-hover-right  ml-1"></i></a>
+
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-offset-1 vc_col-lg-5 text-center">
-                                                        <div class="vc_column-inner">
-                                                            <div class="wpb_wrapper">
-                                                                <div class="d-inline-block">
-                                                                    <div class="animate-in  d-inline-block"
-                                                                        data-anim-type="pix-3d-up-in-big"
-                                                                        data-anim-delay="100">
-                                                                        <div class="tilt">
-                                                                            <div
-                                                                                class="pix-img-el    text-center d-inline-block  w-100 rounded-0">
-                                                                                <img class="card-img2 pix-img-elem rounded-0  h-1002" style="height:auto;" width="1200" height="800" srcset="./images/2020-02-post-image-3.jpg 1200w, ./images/2020-02-post-image-3-300x200.jpg 300w, ./images/2020-02-post-image-3-1024x683.jpg 1024w, ./images/2020-02-post-image-3-768x512.jpg 768w" sizes="(max-width: 1200px) 100vw, 1200px" src="./images/2020-02-post-image-3.jpg" alt="" />
+                                                            <div
+                                                                class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-offset-1 vc_col-lg-5 text-center">
+                                                                <div class="vc_column-inner">
+                                                                    <div class="wpb_wrapper">
+                                                                        <div class="d-inline-block">
+                                                                            <div class="animate-in  d-inline-block"
+                                                                                data-anim-type="pix-3d-up-in-big"
+                                                                                data-anim-delay="100">
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vc_row-full-width vc_clearfix"></div>
+
                                             </section>
-                                            <div class="vc_row-full-width vc_clearfix"></div>
-                                            <section data-vc-full-width="true" data-vc-full-width-init="false"
-                                                class="vc_section vc_section_visible custom-responsive-73215760 vc_custom_1647978086851 vc_section-has-fill"
-                                                data-section-name="">
-                                                <div data-vc-full-width="true" data-vc-full-width-init="false"
-                                                    class="vc_row wpb_row vc_row-fluid vc_row_visible">
-                                                    <div
-                                                        class="wpb_column vc_column_container vc_col-sm-12 text-center">
-                                                        <div class="vc_column-inner">
-                                                            <div class="wpb_wrapper">
-                                                                <div
-                                                                    class="pix-heading-el text-center  vc_custom_1635818834096">
-                                                                    <div class="d-inline-block"
-                                                                        style="max-width:800px;">
-                                                                        <div>
-                                                                            <div class="slide-in-container">
-                                                                                <h2 class="text-heading-default font-weight-bold display-3 animate-in heading-text el-title_custom_color mb-12"
-                                                                                    style="" data-anim-type="fade-in-up"
-                                                                                    data-anim-delay="100">Join The Next
-                                                                                    Revolution.</h2>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="pix-content-box card      vc_custom_1635811920260    rounded-10 fly-sm animate-in bg-  d-inline-flex"
-                                                                    data-anim-type="fade-in" data-anim-delay="0">
-                                                                    <div class="scene scene-over"></div>
-                                                                    <div class="d-inline-flex"
-                                                                        style="z-index:30;position:relative;"><a
-                                                                            href="#">
-                                                                            <div id="1635808243067-c97d6904-01ca"
-                                                                                class="pix-feature-el media">
-                                                                                <div class="mr-3 mw-100 text-gradient-primary animate-in"
-                                                                                    data-anim-type="fade-in-up"
-                                                                                    data-anim-delay="100"
-                                                                                    style="width:43.2px;aspect-ratio:1/1 !important;position:relative;line-height:43.2px;text-align:center;">
-                                                                                    <svg width="100%" height="100%"
-                                                                                        viewbox="0 0 24 24"
-                                                                                        version="1.1"
-                                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                                        <defs></defs>
-                                                                                        <g stroke="none"
-                                                                                            stroke-width="1" fill="none"
-                                                                                            fill-rule="evenodd">
-                                                                                            <path
-                                                                                                d="M0.18,19 L7.1,4.64 L14.02,19 L12.06,19 L10.3,15.28 L3.9,15.28 L2.14,19 L0.18,19 Z M7.1,8.52 L4.7,13.6 L9.5,13.6 L7.1,8.52 Z"
-                                                                                                id="Aa" fill="#000000">
-                                                                                            </path>
-                                                                                            <path
-                                                                                                d="M21.34,19 L21.34,18 C20.5,18.76 19.38,19.16 18.16,19.16 C15.22,19.16 13.06,16.9 13.06,14 C13.06,11.1 15.22,8.84 18.16,8.84 C19.38,8.84 20.5,9.24 21.34,10 L21.34,9 L23.06,9 L23.06,19 L21.34,19 Z M18.2,17.54 C19.64,17.54 20.76,16.86 21.34,15.92 L21.34,12.08 C20.76,11.14 19.64,10.46 18.2,10.46 C16.24,10.46 14.84,12.02 14.84,14 C14.84,15.98 16.24,17.54 18.2,17.54 Z"
-                                                                                                fill="#000000"
-                                                                                                opacity="0.3"></path>
-                                                                                        </g>
-                                                                                    </svg>
-                                                                                </div>
-                                                                                <div class="media-body text-left">
-                                                                                    <h6 class="font-weight-bold   text-heading-default animate-in"
-                                                                                        style="padding-top:10px;"
-                                                                                        data-anim-type="fade-in-up"
-                                                                                        data-anim-delay="200">Perfect
-                                                                                        Design</h6>
-                                                                                    <div class="text-text-gray text-xs     animate-in"
-                                                                                        style=""
-                                                                                        data-anim-type="fade-in-up"
-                                                                                        data-anim-delay="300"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </a></div>
-                                                                </div>
-                                                                <div class="pix-content-box card      vc_custom_1635811932031    rounded-10 fly-sm animate-in bg-  d-inline-flex"
-                                                                    data-anim-type="fade-in" data-anim-delay="100">
-                                                                    <div class="scene scene-over"></div>
-                                                                    <div class="d-inline-flex"
-                                                                        style="z-index:30;position:relative;"><a
-                                                                            href="#">
-                                                                            <div id="1635808243073-1cde2450-59a6"
-                                                                                class="pix-feature-el media">
-                                                                                <div class="mr-3 mw-100 text-gradient-primary animate-in"
-                                                                                    data-anim-type="fade-in-up"
-                                                                                    data-anim-delay="200"
-                                                                                    style="width:43.2px;aspect-ratio:1/1 !important;position:relative;line-height:43.2px;text-align:center;">
-                                                                                    <svg width="100%" height="100%"
-                                                                                        viewbox="0 0 24 24"
-                                                                                        version="1.1"
-                                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                                        <defs></defs>
-                                                                                        <g stroke="none"
-                                                                                            stroke-width="1" fill="none"
-                                                                                            fill-rule="evenodd">
-                                                                                            <path
-                                                                                                d="M9.26193932,16.6476484 C8.90425297,17.0684559 8.27315905,17.1196257 7.85235158,16.7619393 C7.43154411,16.404253 7.38037434,15.773159 7.73806068,15.3523516 L16.2380607,5.35235158 C16.6013618,4.92493855 17.2451015,4.87991302 17.6643638,5.25259068 L22.1643638,9.25259068 C22.5771466,9.6195087 22.6143273,10.2515811 22.2474093,10.6643638 C21.8804913,11.0771466 21.2484189,11.1143273 20.8356362,10.7474093 L17.0997854,7.42665306 L9.26193932,16.6476484 Z"
-                                                                                                id="Path-94-Copy"
-                                                                                                fill="#000000"
-                                                                                                fill-rule="nonzero"
-                                                                                                opacity="0.3"
-                                                                                                transform="translate(14.999995, 11.000002) rotate(-180.000000) translate(-14.999995, -11.000002) ">
-                                                                                            </path>
-                                                                                            <path
-                                                                                                d="M4.26193932,17.6476484 C3.90425297,18.0684559 3.27315905,18.1196257 2.85235158,17.7619393 C2.43154411,17.404253 2.38037434,16.773159 2.73806068,16.3523516 L11.2380607,6.35235158 C11.6013618,5.92493855 12.2451015,5.87991302 12.6643638,6.25259068 L17.1643638,10.2525907 C17.5771466,10.6195087 17.6143273,11.2515811 17.2474093,11.6643638 C16.8804913,12.0771466 16.2484189,12.1143273 15.8356362,11.7474093 L12.0997854,8.42665306 L4.26193932,17.6476484 Z"
-                                                                                                fill="#000000"
-                                                                                                fill-rule="nonzero"
-                                                                                                transform="translate(9.999995, 12.000002) rotate(-180.000000) translate(-9.999995, -12.000002) ">
-                                                                                            </path>
-                                                                                        </g>
-                                                                                    </svg>
-                                                                                </div>
-                                                                                <div class="media-body text-left">
-                                                                                    <h6 class="font-weight-bold   text-heading-default animate-in"
-                                                                                        style="padding-top:10px;"
-                                                                                        data-anim-type="fade-in-up"
-                                                                                        data-anim-delay="300">Fast
-                                                                                        performance</h6>
-                                                                                    <div class="text-text-gray text-xs     animate-in"
-                                                                                        style=""
-                                                                                        data-anim-type="fade-in-up"
-                                                                                        data-anim-delay="400"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </a></div>
-                                                                </div>
-                                                                <div class="pix-content-box card      vc_custom_1635811944073    rounded-10 fly-sm animate-in bg-  d-inline-flex"
-                                                                    data-anim-type="fade-in" data-anim-delay="200">
-                                                                    <div class="scene scene-over"></div>
-                                                                    <div class="d-inline-flex"
-                                                                        style="z-index:30;position:relative;"><a
-                                                                            href="#">
-                                                                            <div id="1635808243079-282cb59b-5dc5"
-                                                                                class="pix-feature-el media">
-                                                                                <div class="mr-3 mw-100 text-gradient-primary animate-in"
-                                                                                    data-anim-type="fade-in-up"
-                                                                                    data-anim-delay="300"
-                                                                                    style="width:43.2px;aspect-ratio:1/1 !important;position:relative;line-height:43.2px;text-align:center;">
-                                                                                    <svg width="100%" height="100%"
-                                                                                        viewbox="0 0 24 24"
-                                                                                        version="1.1"
-                                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                                        <defs></defs>
-                                                                                        <g stroke="none"
-                                                                                            stroke-width="1" fill="none"
-                                                                                            fill-rule="evenodd">
-                                                                                            <path
-                                                                                                d="M7.38979581,2.8349582 C8.65216735,2.29743306 10.0413491,2 11.5,2 C17.2989899,2 22,6.70101013 22,12.5 C22,18.2989899 17.2989899,23 11.5,23 C5.70101013,23 1,18.2989899 1,12.5 C1,11.5151324 1.13559454,10.5619345 1.38913364,9.65805651 L3.31481075,10.1982117 C3.10672013,10.940064 3,11.7119264 3,12.5 C3,17.1944204 6.80557963,21 11.5,21 C16.1944204,21 20,17.1944204 20,12.5 C20,7.80557963 16.1944204,4 11.5,4 C10.54876,4 9.62236069,4.15592757 8.74872191,4.45446326 L9.93948308,5.87355717 C10.0088058,5.95617272 10.0495583,6.05898805 10.05566,6.16666224 C10.0712834,6.4423623 9.86044965,6.67852665 9.5847496,6.69415008 L4.71777931,6.96995273 C4.66931162,6.97269931 4.62070229,6.96837279 4.57348157,6.95710938 C4.30487471,6.89303938 4.13906482,6.62335149 4.20313482,6.35474463 L5.33163823,1.62361064 C5.35654118,1.51920756 5.41437908,1.4255891 5.49660017,1.35659741 C5.7081375,1.17909652 6.0235153,1.2066885 6.2010162,1.41822583 L7.38979581,2.8349582 Z"
-                                                                                                fill="#000000"
-                                                                                                opacity="0.3"></path>
-                                                                                            <path
-                                                                                                d="M14.5,11 C15.0522847,11 15.5,11.4477153 15.5,12 L15.5,15 C15.5,15.5522847 15.0522847,16 14.5,16 L9.5,16 C8.94771525,16 8.5,15.5522847 8.5,15 L8.5,12 C8.5,11.4477153 8.94771525,11 9.5,11 L9.5,10.5 C9.5,9.11928813 10.6192881,8 12,8 C13.3807119,8 14.5,9.11928813 14.5,10.5 L14.5,11 Z M12,9 C11.1715729,9 10.5,9.67157288 10.5,10.5 L10.5,11 L13.5,11 L13.5,10.5 C13.5,9.67157288 12.8284271,9 12,9 Z"
-                                                                                                fill="#000000"></path>
-                                                                                        </g>
-                                                                                    </svg>
-                                                                                </div>
-                                                                                <div class="media-body text-left">
-                                                                                    <h6 class="font-weight-bold   text-heading-default animate-in"
-                                                                                        style="padding-top:10px;"
-                                                                                        data-anim-type="fade-in-up"
-                                                                                        data-anim-delay="400">Security
-                                                                                        Updates</h6>
-                                                                                    <div class="text-text-gray text-xs     animate-in"
-                                                                                        style=""
-                                                                                        data-anim-type="fade-in-up"
-                                                                                        data-anim-delay="500"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </a></div>
-                                                                </div>
-                                                                <div
-                                                                    class="pix-el-text w-100 text-center  vc_custom_1646094936615">
-                                                                    <div class="d-inline-block"
-                                                                        style="max-width:550px;">
-                                                                        <p
-                                                                            class="text-20  text-body-default text-center">
-                                                                            <span class="text-body-default animate-in d-inline-block" data-anim-delay="150" data-anim-type="fade-in-up">The most advanced features ever combine in one WordPress theme, Essentials is the best solution to create stunning premium websites.</span>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vc_row-full-width vc_clearfix"></div>
-                                                <div data-vc-full-width="true" data-vc-full-width-init="false"
-                                                    class="vc_row wpb_row vc_row-fluid vc_row_visible vc_row-o-content-middle vc_row-flex">
-                                                    <div
-                                                        class="wpb_column vc_column_container vc_col-sm-4 vc_col-md-offset-2 text-left">
-                                                        <div class="vc_column-inner  vc_custom_1636579648665">
-                                                            <div class="wpb_wrapper">
-                                                                <div
-                                                                    class="card pix-hover-item  vc_custom_1647912010795 rounded-10 shadow-lg shadow-hover-lg fly-sm hover-bg text-left bg-gradient-primary d-flex align-items-end pix-team-card big-card">
-                                                                    <img src="./images/2021-11-team-1-500x450.jpg" width="500" height="450" srcset="./images/2021-11-team-1-214x300.jpg 214w, ./images/2021-11-team-1.jpg 500w" sizes="(max-width: 500px) 100vw, 500px" class="card-img rounded-10 pix-opacity-6" alt="">
-                                                                    <div
-                                                                        class="card-img-overlay d-flex flex-column justify-content-end">
-                                                                        <h3 class="pix-member-name card-title mb-0 font-weight-bold  secondary-font text-white animate-in"
-                                                                            style="" data-anim-type="pix-3d-right-in"
-                                                                            data-anim-delay="200">Marc Antoine</h3>
-                                                                        <h6 class="pix-member-title font-weight-bold   text-light-opacity-8 mb-2 animate-in"
-                                                                            style="" data-anim-type="pix-3d-right-in"
-                                                                            data-anim-delay="300">Web designer</h6>
-                                                                        <p class="pix-member-desc p-0 animate-in text-light-opacity-7 text-18"
-                                                                            data-anim-type="pix-3d-right-in"
-                                                                            data-anim-delay="400">Headquarters in Lyon,
-                                                                            France</p>
-                                                                        <div class="font-weight-bold pix-social animate-in"
-                                                                            data-anim-type="pix-3d-right-in"
-                                                                            data-anim-delay="700">
-                                                                            <div class="text-white  pix-social-icons font-weight-bold d-inline-block"
-                                                                                style=""><a
-                                                                                    href="https://www.facebook.com/pixfort"
-                                                                                    aria-label=""
-                                                                                    class="text-white animate-in d-inline-block fly-sm text-24 px-2"
-                                                                                    data-anim-type="pix-3d-right-in"
-                                                                                    data-anim-delay="600"><i class="pixicon-facebook3" style=""></i></a><a
-                                                                                    href="https://www.twitter.com/pixfort"
-                                                                                    aria-label=""
-                                                                                    class="text-white animate-in d-inline-block fly-sm text-24 px-2"
-                                                                                    data-anim-type="pix-3d-right-in"
-                                                                                    data-anim-delay="700"><i class="pixicon-twitter" style=""></i></a><a
-                                                                                    href="https://www.dribbble.com/pixfort"
-                                                                                    aria-label=""
-                                                                                    class="text-white animate-in d-inline-block fly-sm text-24 px-2"
-                                                                                    data-anim-type="pix-3d-right-in"
-                                                                                    data-anim-delay="800"><i class="pixicon-dribbble" style=""></i></a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="wpb_column vc_column_container vc_col-sm-4 text-left">
-                                                        <div class="vc_column-inner">
-                                                            <div class="wpb_wrapper">
-                                                                <div
-                                                                    class="card pix-hover-item  vc_custom_1647912019538 rounded-10 shadow-lg shadow-hover-lg fly-sm hover-bg text-left bg-gradient-primary d-flex align-items-end pix-team-card big-card">
-                                                                    <img src="./images/2021-11-team-2-500x450.jpg" width="500" height="450" srcset="./images/2021-11-team-2-214x300.jpg 214w, ./images/2021-11-team-2.jpg 500w" sizes="(max-width: 500px) 100vw, 500px" class="card-img rounded-10 pix-opacity-6" alt="">
-                                                                    <div
-                                                                        class="card-img-overlay d-flex flex-column justify-content-end">
-                                                                        <h3 class="pix-member-name card-title mb-0 font-weight-bold  secondary-font text-white animate-in"
-                                                                            style="" data-anim-type="pix-3d-right-in"
-                                                                            data-anim-delay="400">Sarah Smith</h3>
-                                                                        <h6 class="pix-member-title font-weight-bold   text-light-opacity-8 mb-2 animate-in"
-                                                                            style="" data-anim-type="pix-3d-right-in"
-                                                                            data-anim-delay="500">Content manager</h6>
-                                                                        <p class="pix-member-desc p-0 animate-in text-light-opacity-7 text-18"
-                                                                            data-anim-type="pix-3d-right-in"
-                                                                            data-anim-delay="600">Headquarters in Paris,
-                                                                            France</p>
-                                                                        <div class="font-weight-bold pix-social animate-in"
-                                                                            data-anim-type="pix-3d-right-in"
-                                                                            data-anim-delay="700">
-                                                                            <div class="text-white  pix-social-icons font-weight-bold d-inline-block"
-                                                                                style=""><a
-                                                                                    href="https://www.github.com/pixfort"
-                                                                                    aria-label=""
-                                                                                    class="text-white animate-in d-inline-block fly-sm text-24 px-2"
-                                                                                    data-anim-type="pix-3d-right-in"
-                                                                                    data-anim-delay="800"><i class="pixicon-github2" style=""></i></a><a
-                                                                                    href="https://www.linkedin.com/pixfort"
-                                                                                    aria-label=""
-                                                                                    class="text-white animate-in d-inline-block fly-sm text-24 px-2"
-                                                                                    data-anim-type="pix-3d-right-in"
-                                                                                    data-anim-delay="900"><i class="pixicon-linkedin" style=""></i></a><a
-                                                                                    href="https://www.medium.com/pixfort"
-                                                                                    aria-label=""
-                                                                                    class="text-white animate-in d-inline-block fly-sm text-24 px-2"
-                                                                                    data-anim-type="pix-3d-right-in"
-                                                                                    data-anim-delay="1000"><i class="pixicon-medium" style=""></i></a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vc_row-full-width vc_clearfix"></div>
-                                            </section>
-                                            <div class="vc_row-full-width vc_clearfix"></div>
-                                            <section id="pix_section_features" data-vc-full-width="true"
-                                                data-vc-full-width-init="false"
-                                                class="vc_section vc_section_visible vc_custom_1647978313518 vc_section-has-fill"
-                                                data-section-name="">
-                                                <div data-vc-full-width="true" data-vc-full-width-init="false"
-                                                    class="vc_row wpb_row vc_row-fluid vc_row_visible vc_row-o-content-middle vc_row-flex">
-                                                    <div class="wpb_column vc_column_container vc_col-sm-4 text-left">
-                                                        <div class="vc_column-inner">
-                                                            <div class="wpb_wrapper">
-                                                                <div
-                                                                    class="pix-heading-el text-center  vc_custom_1646095478261">
-                                                                    <div>
-                                                                        <div class="slide-in-container">
-                                                                            <h1 class="text-heading-default font-weight-bold animate-in heading-text el-title_custom_color mb-12"
-                                                                                style="" data-anim-type="fade-in-up"
-                                                                                data-anim-delay="100">Join The Next
-                                                                                Revolution.</h1>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="wpb_column vc_column_container vc_col-sm-4 text-left">
-                                                        <div class="vc_column-inner">
-                                                            <div class="wpb_wrapper">
-                                                                <div id="duo-icon-22279048"
-                                                                    class="slide-in-container w-100   vc_custom_1644360646626">
-                                                                    <div class="py-2 animate-in"
-                                                                        data-anim-type="fade-in-up"
-                                                                        data-anim-delay="200">
-                                                                        <div
-                                                                            class="pix-feature-list text-20 justify-content-center font-weight-bold  secondary-font   py-2 d-flex align-items-center">
-                                                                            <div class="pix-mr-10 text-gradient-primary"
-                                                                                style="width:1.5em;min-width:1.5em;height:1.5em;min-width:1.5em;position:relative;line-height:1em;text-align:center;">
-                                                                                <svg width="100%" height="100%"
-                                                                                    viewbox="0 0 24 24" version="1.1"
-                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                                    <defs></defs>
-                                                                                    <g stroke="none" stroke-width="1"
-                                                                                        fill="none" fill-rule="evenodd">
-                                                                                        <circle fill="#000000"
-                                                                                            opacity="0.3" cx="12"
-                                                                                            cy="12" r="10"></circle>
-                                                                                        <path
-                                                                                            d="M16.7689447,7.81768175 C17.1457787,7.41393107 17.7785676,7.39211077 18.1823183,7.76894473 C18.5860689,8.1457787 18.6078892,8.77856757 18.2310553,9.18231825 L11.2310553,16.6823183 C10.8654446,17.0740439 10.2560456,17.107974 9.84920863,16.7592566 L6.34920863,13.7592566 C5.92988278,13.3998345 5.88132125,12.7685345 6.2407434,12.3492086 C6.60016555,11.9298828 7.23146553,11.8813212 7.65079137,12.2407434 L10.4229928,14.616916 L16.7689447,7.81768175 Z"
-                                                                                            fill="#000000"
-                                                                                            fill-rule="nonzero"></path>
-                                                                                    </g>
-                                                                                </svg>
-                                                                            </div>
-                                                                            <span class="text-body-default">Free future updates</span>
-                                                                        </div>
-                                                                        <div
-                                                                            class="pix-feature-list text-20 justify-content-center font-weight-bold  secondary-font   py-2 d-flex align-items-center">
-                                                                            <div class="pix-mr-10 text-gradient-primary"
-                                                                                style="width:1.5em;min-width:1.5em;height:1.5em;min-width:1.5em;position:relative;line-height:1em;text-align:center;">
-                                                                                <svg width="100%" height="100%"
-                                                                                    viewbox="0 0 24 24" version="1.1"
-                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                                    <defs></defs>
-                                                                                    <g stroke="none" stroke-width="1"
-                                                                                        fill="none" fill-rule="evenodd">
-                                                                                        <circle fill="#000000"
-                                                                                            opacity="0.3" cx="12"
-                                                                                            cy="12" r="10"></circle>
-                                                                                        <path
-                                                                                            d="M16.7689447,7.81768175 C17.1457787,7.41393107 17.7785676,7.39211077 18.1823183,7.76894473 C18.5860689,8.1457787 18.6078892,8.77856757 18.2310553,9.18231825 L11.2310553,16.6823183 C10.8654446,17.0740439 10.2560456,17.107974 9.84920863,16.7592566 L6.34920863,13.7592566 C5.92988278,13.3998345 5.88132125,12.7685345 6.2407434,12.3492086 C6.60016555,11.9298828 7.23146553,11.8813212 7.65079137,12.2407434 L10.4229928,14.616916 L16.7689447,7.81768175 Z"
-                                                                                            fill="#000000"
-                                                                                            fill-rule="nonzero"></path>
-                                                                                    </g>
-                                                                                </svg>
-                                                                            </div>
-                                                                            <span class="text-body-default">Super intuitive to install</span>
-                                                                        </div>
-                                                                        <div
-                                                                            class="pix-feature-list text-20 justify-content-center font-weight-bold  secondary-font   py-2 d-flex align-items-center">
-                                                                            <div class="pix-mr-10 text-gradient-primary"
-                                                                                style="width:1.5em;min-width:1.5em;height:1.5em;min-width:1.5em;position:relative;line-height:1em;text-align:center;">
-                                                                                <svg width="100%" height="100%"
-                                                                                    viewbox="0 0 24 24" version="1.1"
-                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                                    <defs></defs>
-                                                                                    <g stroke="none" stroke-width="1"
-                                                                                        fill="none" fill-rule="evenodd">
-                                                                                        <circle fill="#000000"
-                                                                                            opacity="0.3" cx="12"
-                                                                                            cy="12" r="10"></circle>
-                                                                                        <path
-                                                                                            d="M16.7689447,7.81768175 C17.1457787,7.41393107 17.7785676,7.39211077 18.1823183,7.76894473 C18.5860689,8.1457787 18.6078892,8.77856757 18.2310553,9.18231825 L11.2310553,16.6823183 C10.8654446,17.0740439 10.2560456,17.107974 9.84920863,16.7592566 L6.34920863,13.7592566 C5.92988278,13.3998345 5.88132125,12.7685345 6.2407434,12.3492086 C6.60016555,11.9298828 7.23146553,11.8813212 7.65079137,12.2407434 L10.4229928,14.616916 L16.7689447,7.81768175 Z"
-                                                                                            fill="#000000"
-                                                                                            fill-rule="nonzero"></path>
-                                                                                    </g>
-                                                                                </svg>
-                                                                            </div>
-                                                                            <span class="text-body-default">World-class features</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="wpb_column vc_column_container vc_col-sm-4 text-left">
-                                                        <div class="vc_column-inner">
-                                                            <div class="wpb_wrapper">
-                                                                <div class="d-block w-100 text-center"><a href="#"
-                                                                        class="btn mb-2     text-white btn-gradient-primary d-inline-block pix-hover-item       animate-in pix-btn-div btn-lg"
-                                                                        data-anim-type="fade-in-up"
-                                                                        data-anim-delay="300"><i class="font-weight-bold pixicon-bag-2  pix-hover-left  mr-1"></i>
-                                                                        <span class="font-weight-bold" >Acquire Essentials now</span></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vc_row-full-width vc_clearfix"></div>
-                                            </section>
-                                            <div class="vc_row-full-width vc_clearfix"></div>
+
+
                                         </section>
                                     </div><!-- .entry-content -->
                                 </article><!-- #post-3409 -->
@@ -2078,28 +1547,11 @@
                                                     <div class="d-inline-block" style="max-width:550px;">
                                                         <p
                                                             class="text-20  text-body-default text-center font-weight-bold">
-                                                            <span class="text-body-default animate-in d-inline-block" data-anim-delay="200" data-anim-type="fade-in-up">sample</span>
+                                                            <span class="text-body-default animate-in d-inline-block" data-anim-delay="200" data-anim-type="fade-in-up"></span>
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="text-body-default text-center pix-social-icons font-weight-bold d-inline-block  vc_custom_1644360995922"
-                                                    style="font-size:36px;"><a href="#" aria-label=""
-                                                        class="text-body-default animate-in d-inline-block scale-sm  px-3"
-                                                        data-anim-type="pix-3d-up-in"
-                                                        data-anim-delay="400"><i class="pixicon-facebook3" style=""></i></a><a
-                                                        href="#" aria-label=""
-                                                        class="text-body-default animate-in d-inline-block scale-sm  px-3"
-                                                        data-anim-type="pix-3d-up-in"
-                                                        data-anim-delay="500"><i class="pixicon-twitter" style=""></i></a><a
-                                                        href="#" aria-label=""
-                                                        class="text-body-default animate-in d-inline-block scale-sm  px-3"
-                                                        data-anim-type="pix-3d-up-in"
-                                                        data-anim-delay="600"><i class="pixicon-instagram2" style=""></i></a><a
-                                                        href="#" aria-label=""
-                                                        class="text-body-default animate-in d-inline-block scale-sm  px-3"
-                                                        data-anim-type="pix-3d-up-in"
-                                                        data-anim-delay="700"><i class="pixicon-dribbble" style=""></i></a>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -2147,11 +1599,11 @@
     </script>
     <script>
         window.RS_MODULES = window.RS_MODULES || {};
-			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
-			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
-			window.RS_MODULES.defered = true;
-			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
-			window.RS_MODULES.type = 'compiled';
+            window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+            window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+            window.RS_MODULES.defered = true;
+            window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+            window.RS_MODULES.type = 'compiled';
     </script> <svg class="shape-overlays d-none" viewbox="0 0 100 100" preserveaspectratio="none">
         <defs>
             <lineargradient id="search-overlay-color-1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -2200,7 +1652,7 @@
                                         <div class="media pix-ajax-search-container">
                                             <button class="pix-search-submit align-self-center" aria-label="search" type="submit"><i class="pixicon-search"></i></button>
                                             <div class="media-body">
-                                                <label class="w-100 m-0"> 														<span class="screen-reader-text sr-only">Search for:</span> 														<input value="" name="s" id="s" class="pix-search-input pix-ajax-search" type="search" autocomplete="off" placeholder="Search" data-search-link="http://localhost/wordpress/wp-admin/admin-ajax.php?action=pix_ajax_searcht&#038;nonce=07cf4e0e29" /> 													</label>
+                                                <label class="w-100 m-0">                                                       <span class="screen-reader-text sr-only">Search for:</span>                                                         <input value="" name="s" id="s" class="pix-search-input pix-ajax-search" type="search" autocomplete="off" placeholder="Search" data-search-link="http://localhost/wordpress/wp-admin/admin-ajax.php?action=pix_ajax_searcht&#038;nonce=07cf4e0e29" />                                                   </label>
                                             </div>
                                         </div>
                                     </form>
@@ -2217,7 +1669,7 @@
         <div class="pix-cookie-inner pix-px-10 pix-py-5 rounded-xl shadow-lg pix-mb-20 bg-white fly-sm shadow-hover-lg animate-in"
             data-anim-type="fade-in-up" data-anim-delay="1000">
             <div class="d-sm-flex align-items-center"> <img class="pix-cookie-img mr-1 mr-sm-2" width="30" height="30" src="./images/essentials-inc-images-cookie.png" alt="cookie" />
-                <span class="text-body-default font-weight-bold text-sm"> 				By using this website, you agree to our				<a target="_blank" href="" class="ml-12 text-heading-default font-weight-bold text-sm pix-popup-link" data-popup-link="http://localhost/wordpress/wp-admin/admin-ajax.php?action=pix_popup_content&amp;id=3703&amp;nonce=72110e5259" data-popup-id="3703"> 					cookie policy.				</a> 			</span>
+                <span class="text-body-default font-weight-bold text-sm">               By using this website, you agree to our             <a target="_blank" href="" class="ml-12 text-heading-default font-weight-bold text-sm pix-popup-link" data-popup-link="http://localhost/wordpress/wp-admin/admin-ajax.php?action=pix_popup_content&amp;id=3703&amp;nonce=72110e5259" data-popup-id="3703">                  cookie policy.              </a>            </span>
                 <a href="#"
                     data-link="http://localhost/wordpress/wp-admin/admin-ajax.php?action=pix_close_cookies&#038;nonce=a79ff5db90"
                     class="pix-cookies-close text-20 line-height-0 ml-2 d-inline-block text-gray-4"><span class="screen-reader-text sr-only">Close</span><i class="align-self-center pixicon-close-circle"></i></a>
@@ -2476,6 +1928,8 @@ var pixfort_likes = {"ajaxurl":"http:\/\/localhost\/wordpress\/wp-admin\/admin-a
 /* ]]> */
     </script>
     <script type='text/javascript' src='./js/pixfort-likes-scripts-pixfort-likes.js' id='pixfort-likes-js'></script>
+    <script type="text/javascript" src="./js/form-validation-training.js"></script>
 </body>
 
 </html>
+

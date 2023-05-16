@@ -64,63 +64,23 @@
           color: #777;
         }
 
-        .input-container input:focus ~ label,
-        .input-container input:valid ~ label {
-          top: -10px;
-          left: 10px;
-          color: #5264AE;
-          font-size: 14px;
+        .input-container input:focus{
+            outline: 0;
         }
 
-        .input-container input:focus,
-        .input-container input:valid {
-          border: 2px solid #5264AE;
+        .input-container.success input {
+                border-color: #09c372;
         }
-}
-
-
-         .input-container-box {
-          position: relative;
-          padding: 20px;
-          margin-bottom: 25px;
-          right: 1%;
+        .input-container.error input {
+                border-color: #ff3860;
         }
 
-        .input-container-box textarea {
-          font-size: 16px;
-          padding: 10px;
-          border: 2px solid #ccc;
-          border-radius: 5px;
-          width: 100%;
-          box-sizing: border-box;
-          -webkit-transition: 0.2s all;
-          transition: 0.2s all;
-          resize: none;
-        }
+        .input-container .error {
+            color: #ff3860;
+            font-size: 14px;
+            height: 13px;
 
-        .input-container-box label {
-          position: absolute;
-          top: 10px;
-          left: 10px;
-          -webkit-transition: 0.2s all;
-          transition: 0.2s all;
-          pointer-events: none;
-          color: #777;
         }
-
-        .input-container-box textarea:focus ~ label,
-        .input-container-box textarea:valid ~ label {
-          top: -10px;
-          left: 10px;
-          color: #5264AE;
-          font-size: 14px;
-        }
-
-        .input-container-box textarea:focus,
-        .input-container-box textarea:valid {
-          border: 2px solid #5264AE;
-        }
-
 
 
 
@@ -156,37 +116,6 @@
           box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
         }
 
-        .button-2 {
-          background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
-          border: 0;
-          position: relative;
-          border-radius: 12px;
-          color: #FFFFFF;
-          cursor: pointer;
-          display: inline-block;
-          font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-          font-size: 16px;
-          font-weight: 500;
-          line-height: 2.5;
-          outline: transparent;
-          padding: 0 1rem;
-          text-align: center;
-          text-decoration: none;
-          transition: box-shadow .2s ease-in-out;
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
-          white-space: nowrap;
-          right:-40%;
-        }
-
-        .button-2:not([disabled]):focus {
-          box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-        }
-
-        .button-2:not([disabled]):hover {
-          box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-        }
     </style>
     <link rel='stylesheet' id='wp-block-library-css' href='./css/dist-block-library-style.min.css' type='text/css'
         media='all' />
@@ -1173,6 +1102,14 @@
                                                 data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Setup</span></a>
                                         </li>
                                         <li itemscope="itemscope"
+                                            itemtype="https://www.schema.org/SiteNavigationElement"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-3409 menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
+                                            <a title="Train Bot"
+                                                class="font-weight-bold pix-nav-link text-heading-default nav-link animate-in"
+                                                target="_self" href="./train-bot.html"
+                                                data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Train Bot</span></a>
+                                        </li>
+                                        <li itemscope="itemscope"
                                             itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-3430"
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
                                             <a title="Contact"
@@ -1247,6 +1184,14 @@
                                     target="_self" href="./setup.html"
                                     data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Setup</span></a>
                             </li>
+                            <li itemscope="itemscope"
+                                            itemtype="https://www.schema.org/SiteNavigationElement"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-3409 menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
+                                            <a title="Train Bot"
+                                                class="font-weight-bold pix-nav-link text-heading-default nav-link animate-in"
+                                                target="_self" href="./train-bot.html"
+                                                data-anim-type="fade-in"><span class="pix-dropdown-title text-sm  pix-header-text">Train Bot</span></a>
+                                        </li>
                             <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3430 nav-item dropdown d-lg-flex nav-item-display align-self-stretch overflow-visible align-items-center">
                                 <a title="Contact"
@@ -1313,19 +1258,13 @@
                                                                 <div
                                                                     class="pix-el-text w-100 text-center  vc_custom_1646094584786">
                                                                         <div class="input-container">
-                                                                            <p style="font-size: 14px; text-align: left;font-weight: bold;">Telegram Bot token (required)</p>
+                                                                            <p style="font-size: 14px; text-align: left;font-weight: bold;">Telegram Bot token</p>
                                                                           <input type="text" id="telegram-token" placeholder="Enter Telegram bot token" required>
+                                                                          <div class="error"></div>
                                                                         </div>
                                                                 </div>
                                                                 <div class="d-block w-100 text-center">
                                                                     <button class="button-1" role="button" id="submitBtn" onclick="submitBtn()">Create Bot</button>
-                                                                </div>
-                                                                <div class="input-container-box">
-                                                                    <p style="font-size: 14px; text-align: left;font-weight: bold;">Knowledge Base (optional)</p>
-                                                                    <textarea id="knowledge-base-text" rows="10" cols="50" placeholder="Knowledge Base"></textarea>
-                                                                </div>
-                                                                <div class="d-block w-100 text-center">
-                                                                    <button disabled class="button-2" role="button" id="knowledge_base_submitBtn" onclick="knowledge_base_submitBtn()">Train Bot</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2003,42 +1942,7 @@ var pixfort_likes = {"ajaxurl":"http:\/\/localhost\/wordpress\/wp-admin\/admin-a
 /* ]]> */
     </script>
     <script type='text/javascript' src='./js/pixfort-likes-scripts-pixfort-likes.js' id='pixfort-likes-js'></script>
-    <script>
-        var inputBox = document.getElementById("telegram-token")
-        inputBox.addEventListener("focus", function() {
-            this.placeholder = '';
-        });
-        inputBox.addEventListener("blur", function() {
-            this.placeholder = 'Enter Telegram bot token';
-        });
-    function submitBtn() {
-
-        if (inputBox && inputBox.value.length == 46)
-        {
-            console.log(inputBox.value);
-        } 
-}
-</script>
-<script>
-        const knowledgebaseText = document.getElementById("knowledge-base-text")
-        const SubmitButton = document.getElementById("knowledge_base_submitBtn")
-
-        knowledgebaseText.addEventListener("keyup", (e) => {
-            const value=e.currentTarget.value
-
-            if( value === ""){
-                SubmitButton.disabled = true
-            }
-            else{
-                SubmitButton.disabled = false
-            }
-            
-        })
-
-    function knowledge_base_submitBtn() {
-            console.log(knowledgebaseText.value);
-}
-</script>
+    <script type="text/javascript" src="./js/form-validation.js"></script>
 </body>
 
 </html>
