@@ -398,3 +398,15 @@ If you're experiencing issues, you can try increasing your slippage to 1.1% or h
 
 How to upgrade to higher tier level and increase IDO pool
 You can increase the IDO pool you're eligible for is by staking more BSR into a single pool and automatically moving up the Tiers. By adding more BSR to your staking pool, you can easily switch to a higher Tier without having to wait for the unstaking period. This means more opportunities to participate in exciting projects! 
+
+What is EIP and how does EIP work?
+Basically, the EIP is a specialized insurance protocol that goes above and beyond to protect our community. It constantly evaluates the project's performance during the TGE and keeps a close eye on the token price throughout the entire vesting schedule. If the token price remains below the IDO price for 5 consecutive days, the EIP kicks in and our community is directly refunded. It's just one of the ways we're working to keep our platform safe and secure for everyone involved!
+If you're interested in learning more about our Extended Insurance Protocol (EIP), we've got a great blog post you can check out: https://blog.binstarter.io/eip/
+
+What is FCFS?
+Once the round for the BSR stakers with guaranteed allocation and for the Gleam winners is over, we begin our FCFS or "first-come-first-serve" sale 🙂
+BinStarter offers 2 types of FCFS. The first one is open to all BSR stakers and allows them to purchase any remaining tokens if available. The second one is a public FCFS which happens only if there are any tokens left from the initial rounds. This public round is available to everyone and has no requirements. To stay updated on FCFS announcements, subscribe to the BinStarter telegram channel at https://t.me/BinStarterAnnouncement .
+Please note that allocation is not guaranteed for FCFS, as it depends on how quickly you can complete the purchase. To secure your allocation, we strongly advise staking the minimum BSR and becoming part of a tier level. This will provide the comfort of a guaranteed allocation 👍
+The allocation amounts for FCFS rounds are dependent on the leftover token amount from the pool sales. Because of this, we're not able to announce allocation amounts in advance.
+BinStarter offers 2 types of FCFS. The first one is open to all BSR stakers and allows them to purchase any remaining tokens if available. The second one is a public FCFS which happens only if there are any tokens left from the initial rounds. This public round is available to everyone and has no requirements. To stay updated on FCFS announcements, subscribe to the BinStarter telegram channel at https://t.me/BinStarterAnnouncement .
+Please note that allocation is not guaranteed for FCFS, as it depends on how quickly you can complete the purchase. To secure your allocation, we strongly advise staking the minimum BSR and becoming part of a tier level. This will provide the comfort of a guaranteed allocation 👍

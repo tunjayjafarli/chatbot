@@ -69,7 +69,7 @@ def query_message(
 ) -> str:
     """Return a message for GPT, with relevant source texts pulled from a dataframe."""
     strings, relatednesses = strings_ranked_by_relatedness(query, df)
-    introduction = 'Use the below text to answer the subsequent question. If the answer cannot be found in the context provided, write "I could not find an answer."'
+    introduction = 'Answer the question as truthfully as possible using the provided context.'
     question = f"\n\nQuestion: {query}"
     message = introduction
     for string in strings:
@@ -94,23 +94,31 @@ def ask(
     query: str,
     df: pd.DataFrame,
     model: str = GPT_MODEL,
-    token_budget: int = 4096 - 500,
+    token_budget: int = 2048 - 500,
     print_message: bool = False,
 ) -> str:
     """Answers a query using GPT and a dataframe of relevant texts and embeddings."""
     message = query_message(query, df, model=model, token_budget=token_budget)
     if print_message:
         print(message)
-    messages = [
-        {"role": "system", "content": "You answer questions about the articles provided."},
-        {"role": "user", "content": message},
-    ]
-    response = openai.ChatCompletion.create(
-        model=model,
-        messages=messages,
-        temperature=0
+    # messages = [
+    #     {"role": "system", "content": "You answer questions."},
+    #     {"role": "user", "content": message},
+    # ]
+    # response = openai.ChatCompletion.create(
+    #     model=model,
+    #     messages=messages,
+    #     temperature=0
+    # )
+    response = openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=f"{message}",
+        max_tokens=2048 - 500,
+        n=1,
+        stop=None,
+        temperature=0,
     )
-    response_message = response["choices"][0]["message"]["content"]
+    response_message = response.choices[0].text.strip()
     if print_message:
         print(response_message)
     return response_message

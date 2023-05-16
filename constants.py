@@ -3,6 +3,7 @@ TELEGROM_BOT_TOKEN = '6173174452:AAGnt2QsyKNfNpWhISzYP9LfvIrw02dZHFo'
 
 # OpenAI API key
 OPENAI_API_KEY = "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"
+# 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
 
 # OpenAI models
 GPT_MODEL = "gpt-3.5-turbo"
