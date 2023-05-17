@@ -1,4 +1,5 @@
 const knowledgebaseText = document.getElementById("knowledge-base-text")
+const SubmitButton = document.getElementById("knowledge_base_submitBtn")
 
 const setError = (element, message) =>{
             const inputControl = element.parentElement;
@@ -23,6 +24,6 @@ function knowledge_base_submitBtn() {
         else{
 
             console.log(knowledgebaseText.value);
-            setSuccess(knowledgebaseText, "helo")
+            setSuccess(knowledgebaseText)
         }
 }
