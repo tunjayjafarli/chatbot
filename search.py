@@ -69,7 +69,7 @@ def query_message(
 ) -> str:
     """Return a message for GPT, with relevant source texts pulled from a dataframe."""
     strings, relatednesses = strings_ranked_by_relatedness(query, df)
-    introduction = 'Answer the question as truthfully as possible using the provided context.'
+    introduction = 'Answer the question as truthfully as possible using the provided context.\n'
     question = f"\n\nQuestion: {query}"
     message = introduction
     for string in strings:
