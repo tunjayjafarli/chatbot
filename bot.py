@@ -1,4 +1,7 @@
+import os
+
 import openai
+import bardapi
 
 from telegram import Update
 from telegram.ext import ApplicationBuilder
@@ -10,11 +13,9 @@ from telegram.ext import MessageHandler
 from constants import TELEGROM_BOT_TOKEN
 from constants import OPENAI_API_KEY
 from constants import EMBEDDINGS_FILE
+from constants import GOOGLE_BARD_API_KEY
 from search import ask
 from search import get_embeddings
-
-# Set the OpenAI API key
-openai.api_key = OPENAI_API_KEY
 
 # Load the embeddings into a dataframe object
 df = get_embeddings(EMBEDDINGS_FILE)
@@ -74,6 +75,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Run the program
 def main():
     print('Starting up bot...')
+
+    # Set the Google Bard API key
+    os.environ['_BARD_API_KEY'] = GOOGLE_BARD_API_KEY
+
+    # Set the OpenAI API key
+    openai.api_key = OPENAI_API_KEY
 
     # Uncomment when testing from command line, and comment out everything below
     # while True:

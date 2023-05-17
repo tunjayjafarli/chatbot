@@ -1,15 +1,16 @@
+import os
+
 import ast  # for converting embeddings saved as strings back to arrays
 import openai  # for calling the OpenAI API
 import pandas as pd  # for storing text and embeddings data
 import tiktoken  # for counting tokens
 from scipy import spatial  # for calculating vector similarities for search
 
+from bard_api import get_response_from_bard
 from constants import EMBEDDING_MODEL
 from constants import GPT_MODEL
 from constants import OPENAI_API_KEY
-
-# Set the OpenAI API key
-openai.api_key = OPENAI_API_KEY
+from constants import GOOGLE_BARD_API_KEY
 
 # ********* 1. Prepare search data *********
 
@@ -94,38 +95,28 @@ def ask(
     query: str,
     df: pd.DataFrame,
     model: str = GPT_MODEL,
-    token_budget: int = 2048 - 500,
+    token_budget: int = 2048,
     print_message: bool = False,
 ) -> str:
     """Answers a query using GPT and a dataframe of relevant texts and embeddings."""
     message = query_message(query, df, model=model, token_budget=token_budget)
+    response = get_response_from_bard(message)
+    
     if print_message:
         print(message)
-    # messages = [
-    #     {"role": "system", "content": "You answer questions."},
-    #     {"role": "user", "content": message},
-    # ]
-    # response = openai.ChatCompletion.create(
-    #     model=model,
-    #     messages=messages,
-    #     temperature=0
-    # )
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=f"{message}",
-        max_tokens=2048 - 500,
-        n=1,
-        stop=None,
-        temperature=0,
-    )
-    response_message = response.choices[0].text.strip()
-    if print_message:
-        print(response_message)
-    return response_message
+        print(response)
+    
+    return response
 
 
 def main():
     print('Running search.py...')
+
+    # Set the Google Bard API key
+    os.environ['_BARD_API_KEY'] = GOOGLE_BARD_API_KEY
+
+    # Set the OpenAI API key
+    openai.api_key = OPENAI_API_KEY
 
     embeddings_path = "data/embeddings.csv"
     df = get_embeddings(embeddings_path)
