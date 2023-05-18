@@ -1,8 +1,9 @@
-        var inputBox = document.getElementById("telegram-token")
-        inputBox.addEventListener("focus", function() {
+        const token = document.getElementById("telegram-token")
+
+        token.addEventListener("focus", function() {
             this.placeholder = '';
         });
-        inputBox.addEventListener("blur", function() {
+        token.addEventListener("blur", function() {
             this.placeholder = 'Enter Telegram bot token';
         });
         const setError = (element, message) =>{
@@ -23,18 +24,20 @@
 
     function submitBtn() {
 
-        if (inputBox && inputBox.value.length == 46)
+        const tokenValue = token.value.trim()
+
+        if (tokenValue.length == 46)
         {
-            console.log(inputBox.value);
-            setSuccess(inputBox);
+            console.log(token.value);
+            setSuccess(token);
         }
-        else if (inputBox.value == '')
+        else if (token.value == '')
         {
-            setError(inputBox, "Please enter your Bot Token")
+            setError(token, "Please enter your Bot Token")
         }
         else
         {
-            setError(inputBox, "Please enter a valid token")
+            setError(token, "Please enter a valid token")
         }
 }
 
