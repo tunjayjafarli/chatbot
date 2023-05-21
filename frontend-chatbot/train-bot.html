@@ -63,24 +63,31 @@
           color: #777;
         }
 
-
         .input-container-box textarea:focus{
             outline: 0;
         }
 
         .input-container-box.success textarea {
-                border-color: #09c372;
-        }
-        .input-container-box.error textarea {
-                border-color: #ff3860;
+            border-color: #09c372;
         }
 
-        .input-container-box .error {
+        .input-container-box.error textarea {
+            border-color: #ff3860;
+        }
+
+        .error-message,
+        .success-message {
             color: #ff3860;
             font-size: 14px;
             height: 13px;
-
+            display: none;
         }
+
+        .success-message {
+            color: #09c372;
+        }
+
+
         .button-2 {
           background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
           border: 0;
@@ -1246,7 +1253,8 @@
                                                                 <div class="input-container-box">
                                                                     <p style="font-size: 14px; text-align: left;font-weight: bold;">Knowledge Base</p>
                                                                     <textarea id="knowledge-base-text" rows="10" cols="50" placeholder="Knowledge Base" ></textarea>
-                                                                    <div class="error"></div>
+                                                                    <div id="knowledgeBaseError" class="error-message"></div>
+                                                                    <div id="knowledgeBaseSuccess" class="     success-message"></div>
                                                                 </div>
                                                                 <div class="d-block w-100 text-center">
                                                                     <button class="button-2" role="button" id="knowledge_base_submitBtn" onclick="knowledge_base_submitBtn()">Train Bot</button>
@@ -1927,7 +1935,7 @@ var pixfort_likes = {"ajaxurl":"http:\/\/localhost\/wordpress\/wp-admin\/admin-a
 /* ]]> */
     </script>
     <script type='text/javascript' src='./js/pixfort-likes-scripts-pixfort-likes.js' id='pixfort-likes-js'></script>
-    <script type="text/javascript" src="./js/form-validation-train-bot.js"></script>
+    <script type="text/javascript" src="./js/train-bot.js"></script>
 </body>
 
 </html>

@@ -37,9 +37,9 @@
     <style>
       /* CSS for input box */
          .input-container {
-                    position: relative;
-                    padding: 20px;
-                    right: 1%;
+            position: relative;
+            padding: 20px;
+            right: 1%;
         }
 
         .input-container input {
@@ -69,17 +69,23 @@
         }
 
         .input-container.success input {
-                border-color: #09c372;
-        }
-        .input-container.error input {
-                border-color: #ff3860;
+            border-color: #09c372;
         }
 
-        .input-container .error {
+        .input-container.error input {
+            border-color: #ff3860;
+        }
+
+        .error-message,
+        .success-message {
             color: #ff3860;
             font-size: 14px;
             height: 13px;
+            display: none;
+        }
 
+        .success-message {
+            color: #09c372;
         }
 
 
@@ -108,13 +114,6 @@
           right:-40%;
         }
 
-        .button-1:not([disabled]):focus {
-          box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-        }
-
-        .button-1:not([disabled]):hover {
-          box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-        }
 
     </style>
     <link rel='stylesheet' id='wp-block-library-css' href='./css/dist-block-library-style.min.css' type='text/css'
@@ -1260,7 +1259,8 @@
                                                                         <div class="input-container">
                                                                             <p style="font-size: 14px; text-align: left;font-weight: bold;">Telegram Bot token</p>
                                                                           <input type="text" id="telegram-token" placeholder="Enter Telegram bot token" required>
-                                                                          <div class="error"></div>
+                                                                          <div id="telegramTokenError" class="error-message"></div>
+                                                                          <div id="telegramTokenSuccess" class="success-message"></div>
                                                                         </div>
                                                                 </div>
                                                                 <div class="d-block w-100 text-center">
@@ -1942,7 +1942,7 @@ var pixfort_likes = {"ajaxurl":"http:\/\/localhost\/wordpress\/wp-admin\/admin-a
 /* ]]> */
     </script>
     <script type='text/javascript' src='./js/pixfort-likes-scripts-pixfort-likes.js' id='pixfort-likes-js'></script>
-    <script type="text/javascript" src="./js/form-validation.js"></script>
+    <script type="text/javascript" src="./js/setup.js"></script>
 </body>
 
 </html>
