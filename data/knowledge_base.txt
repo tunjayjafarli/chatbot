@@ -410,3 +410,319 @@ Please note that allocation is not guaranteed for FCFS, as it depends on how qui
 The allocation amounts for FCFS rounds are dependent on the leftover token amount from the pool sales. Because of this, we're not able to announce allocation amounts in advance.
 BinStarter offers 2 types of FCFS. The first one is open to all BSR stakers and allows them to purchase any remaining tokens if available. The second one is a public FCFS which happens only if there are any tokens left from the initial rounds. This public round is available to everyone and has no requirements. To stay updated on FCFS announcements, subscribe to the BinStarter telegram channel at https://t.me/BinStarterAnnouncement .
 Please note that allocation is not guaranteed for FCFS, as it depends on how quickly you can complete the purchase. To secure your allocation, we strongly advise staking the minimum BSR and becoming part of a tier level. This will provide the comfort of a guaranteed allocation 👍
+
+To stay updated about our IDO listing announcements, please check out our Official BinStarter Announcement channel at @BinStarterAnnouncement  or follow us on Twitter at twitter.com/BinStarterio . See you there!
+
+It's basically a mutual effort to support each other through connections, referrals, and possibly even needed services. By working together, they can achieve common goals and help each other out.
+
+Hey friend! If you want to participate in an IDO project, it's mandatory to join the whitelist. In addition to staking BSR, you can do this by clicking the ""Join Whitelist"" button on the IDO Project page, which you can find at bsr.binstarter.io/ido/projects. Just keep in mind that the whitelisting process for BSR stakers ends 24 hours before the IDO. If you forget to join the whitelist, don't worry - you can still purchase from the Public FCFS round. Check out this guide on how to join a whitelist: support.binstarter.io/article/8-how-to-join-a-whitelist.
+
+We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
+
+We've also recently launched the Extended Insurance Protocol (EIP), which is a specialized insurance protocol that constantly evaluates the project's performance during the TGE and keeps track of the token price throughout the entire vesting schedule. If the token price remains below the IDO price for 5 consecutive days, the EIP is activated.
+You can easily spot projects that are involved with the EIP by looking for the "EIP" label on the IDO Projects page, which you can find at this link: bsr.binstarter.io/ido/projects .
+For more information about EIP and how it works, be sure to check out our blog at this link: blog.binstarter.io/eip/
+
+Our community on Twitter is growing everyday but as of now, we have more than 260K followers. You may follow up to get updated with the latest news about BinStarter and the projects we work with - twitter.com/BinStarterio
+
+If you have any business proposals, please feel free to send us an email at angel@binstarter.io.
+
+The size of the allocation will vary depending on the project, but the higher your tier, the more allocation you'll be eligible for. The allocation multiplier will be based on factors like the amount of BSR you stake, the number of participants, and the total funds raised for the IDO.
+
+To check out previous IDO allocation details for different projects and tier levels, head to our ""IDO & IGO"" blog at this link: blog.binstarter.io/tag/ido-igo/ and look for the ""IDO Allocations + Details"" articles.
+
+Below are the minimum BSR amount to stake for each tier levels and the corresponding pool weights:
+Tier 1 — min 1000 BSR — 1x Guaranteed Allocation 
+Tier 2 — min 2000 BSR — 2x Guaranteed Allocation 
+Tier 3 — min 4000 BSR — 4x Guaranteed Allocation 
+Tier 4 — min 8000 BSR — 8x Guaranteed Allocation 
+Tier 5 — min 16000 BSR  — 16x Guaranteed Allocation 
+Tier 6 — min 32000 BSR — 32x Guaranteed Allocation 
+Tier 7 — min 64000 BSR  — 64x Guaranteed Allocation 
+Tier 8 — min 128000 BSR — 128x Guaranteed Allocation
+
+The official BinStarter website link is: binstarter.io/
+
+In addition to staking BSR, you can do this by clicking the "Join Whitelist" button on the IDO Project page, which you can find at bsr.binstarter.io/ido/projects. Just keep in mind that the whitelisting process for BSR stakers ends 24 hours before the IDO. If you forget to join the whitelist, don't worry - you can still purchase from the Public FCFS round. Check out this guide on how to join a whitelist: support.binstarter.io/article/8-how-to-join-a-whitelist.
+
+Official Chat Support Admins of BinStarter are:
+@Blaze89911
+@LhoLhaC
+@Jomar30291
+@CrisTanex
+For any concerns or inquiries, they are the ones equipped to provide you with assistance and answer.
+
+Shelby is the founder and CEO of BinStarter platform.
+
+Hey there! To get the latest updates on our airdrop campaigns, make sure to follow our Telegram announcement channel at https://t.me/BinStarterAnnouncement . We'll also be announcing the distribution date of the rewards on our official Telegram channels soon, so stay tuned!  😉
+
+Hey there! If you're looking for more information about BinStarter, we recommend checking out our whitepaper or visiting our page on CoinMarketCap. You can find the link here: coinmarketcap.com/currencies/binstarter/ 
+
+Current networks supported by BinStarter platform are as follows:
+Binance Smart Chain
+Ethereum
+Polygon Matic
+Avalanche C
+These are all blockchain networks that can be used to participate in IDOs on BinStarter. The network that is used for a particular IDO will be specified on the project's page.
+
+Hey there! For the latest updates on our IDO calendar, please follow our Official Twitter account twitter.com/BinStarterio . You can also check out this link to get more information about the projects lined up for IDO: bsr.binstarter.io/ido/projects .
+
+If you want to stay up-to-date on all the latest news and announcements from BinStarter, we have a few channels you can follow! For official announcements, head to our Telegram Announcement channel @BinStarterAnnouncement.
+We also share updates on our Twitter account at twitter.com/BinStarterio  and on our blog at blog.binstarter.io/  So feel free to follow us on these platforms to stay in the loop!
+Stay informed with our latest updates through our Official Social Media accounts:
+Telegram Announcement Channel: @BinStarterAnnouncement
+Twitter: twitter.com/BinStarterio
+Also, check out our Blog where we post all BinStarter events and updates blog.binstarter.io/
+
+Just to let you know, staking your BSR tokens is a great way to earn daily rewards, even if there's no ongoing IDO at the moment. In fact, participating in IDOs is just one of the many benefits of staking BSR! 🤩
+With daily staking rewards of up to 122% APY, it's definitely worth considering. Just make sure you choose the TIER that suits you best to start your journey with BinStarter.
+We've got a few different tier levels to choose from, with details such as minimum BSR requirements, lock periods for unstaking, pool weights that determine your IDO allocation, and APY rates used to compute your staking reward.
+Tier 1 — min 1000 BSR — Lock Period 7 days — 1x Guaranteed Allocation — 1% APY
+Tier 2 — min 2000 BSR — Lock Period 14 Days — 2x Guaranteed Allocation — 2% APY
+Tier 3 — min 4000 BSR — Lock Period 21 Days — 4x Guaranteed Allocation — 4% APY
+Tier 4 — min 8000 BSR — Lock Period 30 Days — 8x Guaranteed Allocation — 6% APY
+Tier 5 — min 16000 BSR — Lock Period 60 Days — 16x Guaranteed Allocation — 8% APY
+Tier 6 — min 32000 BSR — Lock Period 90 Days — 32x Guaranteed Allocation — 10% APY
+Tier 7 — min 64000 BSR — Lock Period 120 Days — 64x Guaranteed Allocation — 12% APY
+Tier 8 — min 128000 BSR — Lock Period 150 Days — 128x Guaranteed Allocation — 15% APY
+For a complete guide on how to stake your BSR tokens, be sure to check out this article👇🏻
+support.binstarter.io/article/17-how-to-stake-bsr-on-binstarter-app
+
+We welcome everyone in the community. As long as you have access to Crypto wallets, you are free to join in our IDO.
+To participate in any IDO projects, you need to be on any of the tier levels by staking the corresponding minimum BSR. Next, you need to join the Whitelist of the IDO project you wish to participate by clicking ""Join Whitelist"" button from the IDO Project page found on this link, bsr.binstarter.io/ido/projects. Whitelisting process for BSR stakers ends 24 hours before the IDO. For complete details on how to participate in an IDO, you may refer to this guide support.binstarter.io/article/9-how-to-participate-in-an-ido.
+Below are the minimum BSR amount to stake for each tier levels:
+Tier 1 — min 1000 BSR 
+Tier 2 — min 2000 BSR 
+Tier 3 — min 4000 BSR 
+Tier 4 — min 8000 BSR 
+Tier 5 — min 16000 BSR 
+Tier 6 — min 32000 BSR 
+Tier 7 — min 64000 BSR 
+Tier 8 — min 128000 BSR
+For complete details on how to participate in an IDO you may refer to this guide support.binstarter.io/article/9-how-to-participate-in-an-ido."
+
+Our goal is to create an ecosystem of like-minded partners and work on promising projects together for the benefit and betterment of everyone. To get the full list of BinStarter partners, visit this link binstarter.io/
+
+If you're interested in our upcoming AMAs, you can check out the schedules on our Telegram announcement channels. And if you haven't subscribed yet, no worries! You can join us by subscribing to this channel: @BinStarterAnnouncement . Can't wait to see you there!"
+
+The specifics will be announced if the token will be airdropped or claimed. 
+
+Hey there! We usually run awesome airdrop campaigns, and you can find all the details pinned to our Telegram announcement channels. If you haven't subscribed yet, you can join us by clicking on this link: @BinStarterAnnouncement. Don't miss out on these exciting opportunities! 🤩
+Our goal is to create an ecosystem of like-minded partners and work on promising projects together for the benefit and betterment of everyone. To get the full list of BinStarter partners, visit this link binstarter.io/
+The official BinStarter website link is: binstarter.io/
+Hey there! For the latest updates on our IDO calendar, please follow our Official Twitter account twitter.com/BinStarterio . You can also check out this link to get more information about the projects lined up for IDO: bsr.binstarter.io/ido/projects .
+"We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
+
+Hey there! For the latest updates on our IDO calendar, please follow our Official Twitter account twitter.com/BinStarterio . You can also check out this link to get more information about the projects lined up for IDO: bsr.binstarter.io/ido/projects .
+
+BinStarter has launched a number of projects in the past. To get detailed information about the projects, kindly refer to this link: bsr.binstarter.io/ido/projects
+
+These projects have all had varying degrees of success, with some achieving significant gains in price and others underperforming. It is important to do your own research before investing in any project, regardless of whether it is being launched on BinStarter or another platform.
+
+The Extended Insurance Protocol (EIP) is a safety net that protects investors if the price of a token falls below the IDO price for five consecutive days. If EIP kicks in, your tokens can be claimed through the dashboard. 
+We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
+
+If you have any business proposals, please feel free to send us an email at angel@binstarter.io.
+
+BinStarter has a number of exciting future plans, including:
+* Expanding to new blockchains
+* Adding more features to the platform
+* Partnering with more projects to bring high-quality projects to the market.
+* Growing and expanding the community 
+
+BinStarter is committed to providing a platform that makes it easy for users to participate in projects. With its innovative features and strong community, BinStarter is well-positioned to become a leading launchpad platform."
+Hey there! For the latest updates on our IDO calendar, please follow our Official Twitter account twitter.com/BinStarterio . You can also check out this link to get more information about the projects lined up for IDO: bsr.binstarter.io/ido/projects .
+"We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
+
+Our goal is to create an ecosystem of like-minded partners and work on promising projects together for the benefit and betterment of everyone. To get the full list of BinStarter partners, visit this link binstarter.io/
+
+The BinStarter team is a group of experienced professionals with a passion for blockchain technology and committed to providing a safe and secure platform for investors to participate in early-stage blockchain projects. 
+Here are the BinStarter key team members
+* Shelby - CEO and Co-founder
+* Angel - CMO
+* Chuck - Head of the Global Business Development 
+* Ana - Marketing Manager
+* Bryan - Project Assessment Manager
+* Nona - Content Manager
+The BinStarter team is constantly growing and evolving, and the team is always looking for new talent to join the team. "
+
+Hey there! If you're looking to check out past and upcoming IDOs, we've got you covered. You can simply head to this link: bsr.binstarter.io/ido/projects to view all the information you need 😊
+
+Make sure you're subscribed to our official channels to stay up to date on all of our latest updates.
+
+We also have a blog repository where you can find the latest announcements, community updates, support guidelines, and more. Click on this link https://blog.binstarter.io/  to access all the latest information."
+
+Hey there! For the latest updates on our IDO calendar, please follow our Official Twitter account twitter.com/BinStarterio . You can also check out this link to get more information about the projects lined up for IDO: bsr.binstarter.io/ido/projects .
+
+Hey there! You can easily purchase $BSR from PancakeSwap by clicking on this link: pancakeswap.finance/swap . To guide you through the process, you can check out this link for a detailed guide on how to buy $BSR from PancakeSwap: support.binstarter.io/article/10-how-to-buy-bsr-from-pancakeswap.
+
+If you want to join an IDO project after staking BSR tokens, you'll need to join their Whitelist. Just head to this link: https://bsr.binstarter.io/ido/projects and click the ""Join Whitelist"" button. Remember, you need to do this at least 24 hours before the IDO. For more info on how to participate in an IDO, check out this guide: support.binstarter.io/article/9-how-to-participate-in-an-ido."
+Hey there! If you're looking for more information about BinStarter, we recommend checking out our whitepaper or visiting our page on CoinMarketCap. You can find the link here: coinmarketcap.com/currencies/binstarter/ 
+The founder of Binstarter is Shelby.
+"Official Chat Support Admins of BinStarter are:
+@Blaze89911
+@LhoLhaC
+@Jomar30291
+@CrisTanex
+For any concerns or inquiries, they are the ones equipped to provide you with assistance and answer,"
+
+The official BinStarter website link is: binstarter.io/
+
+We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
+We've also recently launched the Extended Insurance Protocol (EIP), which is a specialized insurance protocol that constantly evaluates the project's performance during the TGE and keeps track of the token price throughout the entire vesting schedule. If the token price remains below the IDO price for 5 consecutive days, the EIP is activated.
+You can easily spot projects that are involved with the EIP by looking for the ""EIP"" label on the IDO Projects page, which you can find at this link: bsr.binstarter.io/ido/projects .
+For more information about EIP and how it works, be sure to check out our blog at this link: blog.binstarter.io/eip/ "
+
+Absolutely! We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
+
+We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
+
+Hey there! If you're looking to check out past and upcoming IDOs, we've got you covered. You can simply head to this link: bsr.binstarter.io/ido/projects to view all the information you need 😊
+Stay informed with our latest updates through our Official Social Media accounts:
+
+Telegram Announcement Channel: @BinStarterAnnouncement
+Twitter: twitter.com/BinStarterio
+
+Also, check out our Blog where we post all BinStarter events and updates blog.binstarter.io/"
+If you want to stay up-to-date on all the latest news and announcements from BinStarter, we have a few channels you can follow! For official announcements, head to our Telegram Announcement channel at @BinStarterAnnouncement.
+
+We also share updates on our Twitter account at twitter.com/BinStarterio  and on our blog at blog.binstarter.io/  So feel free to follow us on these platforms to stay in the loop! "
+
+If you're interested in our upcoming AMAs, you can check out the schedules on our Telegram announcement channels. And if you haven't subscribed yet, no worries! You can join us by subscribing to this channel: @BinStarterAnnouncement . Can't wait to see you there!"
+
+If you have any business proposals, please feel free to send us an email at angel@binstarter.io.
+
+The Extended Insurance Protocol (EIP) is a safety net that protects investors if the price of a token falls below the IDO price for five consecutive days. If EIP kicks in, your tokens can be claimed through the dashboard. 
+FCFS Public Round only happens as if the allocation hasn't been sold out and the allocation amount per user for this round is only available when the round starts. We announce pool allocations for each Tier 24 hours before the IDO for each project.
+We're proud to be the industry's first insured launchpad that's helping to evolve the industry. Our main goal is to ensure the safety of our community and the projects we support. To achieve this, we've created an insurance policy that protects our members' investments in case of any unfair events. In the event that the policy is triggered during a launch, our members' funds are returned, essentially a 100% refund. We also have another protection system that safeguards our community from market conditions by protecting the undistributed part of their investment. Check out blog.binstarter.io/eip/ for more information 🙂
+If you have any business proposals, please feel free to send us an email at angel@binstarter.io.
+Loyalty bonus is designed to incentivized BinStarter committed members. Our loyal community members are now receiving 10 times more loyalty bonus every 150 days for their commitment to BSR.
+
+There is no deadline to claim your tokens.
+
+Hey there! Just a quick reminder to make sure you don't include decimals when staking your BSR tokens to avoid any errors. If you're still having issues, feel free to send us a DM with a screenshot so we can help you out! 😉
+You can increase the IDO pool you're eligible for by staking more BSR into a single pool and automatically moving up the Tiers. By adding more BSR to your staking pool, you can easily switch to a higher Tier without having to wait for the unstaking period. 
+
+You won't miss out on participating in our upcoming IDOs if you simply click the ""Join Whitelist"" button on the IDO Project page found at bsr.binstarter.io/ido/projects. Please note that the whitelisting process for BSR stakers ends 24 hours before the IDO. To learn more about participating in an IDO, check out our handy guide at support.binstarter.io/article/9-how-to-participate-in-an-ido."
+If you have any business proposals, please feel free to send us an email at angel@binstarter.io.
+EIP is an Extended Insurance Protocol that protects investors in case of a project failure. If the token price of a project falls below the IDO price for 5 consecutive days, EIP will trigger and investors will be refunded their investment.
+
+It is important to note that EIP is not a guarantee of success. It is simply a safety net that protects investors from losing all of their money if a project fails.
+
+Deomonstrating this level of security is manifested in the refund of some of the projects, the recent ones include YachtingVerse and Alaska Gold Rush."
+Hey there! For the latest updates on our IDO calendar, please follow our Official Twitter account twitter.com/BinStarterio . You can also check out this link to get more information about the projects lined up for IDO: bsr.binstarter.io/ido/projects .
+If you staked your BSR and clicked on the Join Whitelist button in the project page before it closes, you are good to go. The Pool which has a “WHITELIST” label is the pool you are eligible to participate in.
+
+To get more details on how to join a Whitelist, please refer to this link support.binstarter.io/article/8-how-to-join-a-whitelist "
+BinStarter Official Local Channels list:
+Click here for Turkish Group (@binstartertr)   
+Click here  for Russian Group (@BinStarter_RU) 
+Click here  for Vietnamese Group (@binstarterVietnam) 
+Click here  for Nigerian Group (@BinStarterNigeria) 
+Also, be sure to subscribe to our telegram channel at @BinStarterAnnouncement and check out our blog for the latest news at blog.binstarter.io/."
+
+Thanks to the BinStarter V5 update, every BinStarter tier will now come with a guaranteed allocation. You can increase the IDO pool you're eligible for is by staking more BSR into a single pool and automatically moving up the Tiers. By adding more BSR to your staking pool, you can easily switch to a higher Tier without having to wait for the unstaking period. 
+
+You won't miss out on participating in our upcoming IDOs if you simply click the ""Join Whitelist"" button on the IDO Project page found at bsr.binstarter.io/ido/projects. Please note that the whitelisting process for BSR stakers ends 24 hours before the IDO. To learn more about participating in an IDO, check out our handy guide at support.binstarter.io/article/9-how-to-participate-in-an-ido."
+Yes. The Yacthingverse IDO took place on April 30, 2023 and concluded with resounding success. It's worth noting that all the allocations for BinStarter were sold out within moments, demonstrating an overwhelming response from the community. 
+You can earn BSR by simply sharing your referral link with your friends and family. You don't have to stake anything to qualify. You can get up to 1% of BSR from the Referee's staked amount. You will also get rewarded for each staking transaction made by the Referee in a year. You can copy your referral link from your My Profile page. Check out support.binstarter.io/article/20-referral-program for more details.
+Bonus ratio is 1/1000. Loyalty bonus is designed to incentivized BinStarter committed members. Our loyal community members are now receiving 10 times more loyalty bonus every 150 days for their commitment to BSR.
+"No, but we're excited to explore listing BinStarter on centralized exchanges (CEX) once the market picks up momentum again 👊
+
+Our long-term goal is to ensure that everyone is satisfied with the exchanges we choose to participate in."
+"We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
+
+At the moment, BinStarter is compatible with two wallets: TrustWallet and MetaMask. To find detailed instructions on how to setup these wallets, please refer to the following links:
+
+How to Setup TrustWallet : support.binstarter.io/article/13-how-to-setup-trust-wallet
+How to Setup MetaMask Wallet: support.binstarter.io/article/11-how-to-setup-metamask-wallet"
+
+We're proud to be the industry's first insured launchpad that's helping to evolve the industry. Our main goal is to ensure the safety of our community and the projects we support. To achieve this, we've created an insurance policy that protects our members' investments in case of any unfair events. In the event that the policy is triggered during a launch, our members' funds are returned, essentially a 100% refund. We also have another protection system that safeguards our community from market conditions by protecting the undistributed part of their investment. Check out blog.binstarter.io/eip/ for more information 🙂
+
+Minimum amount of token to stake for a guaranteed allocation is 1000 BSR. 
+
+Bonus ratio is 1/1000. Loyalty bonus is designed to incentivized BinStarter committed members. Our loyal community members are now receiving 10 times more loyalty bonus every 150 days for their commitment to BSR. 
+
+Below you'll find the different tiers available at BinStarter. These tiers have different requirements, such as a minimum number of BSR tokens, lock periods when you unstake, and pool weights that determine your IDO allocation. Additionally, the APY rates are used to calculate your staking reward.
+Here's an overview of the different tiers and their details 👇🏻
+Tier 1 — min 1000 BSR — Lock Period 7 days — 1x Guaranteed Allocation — 1% APY
+Tier 2 — min 2000 BSR — Lock Period 14 Days — 2x Guaranteed Allocation — 2% APY
+Tier 3 — min 4000 BSR — Lock Period 21 Days — 4x Guaranteed Allocation — 4% APY
+Tier 4 — min 8000 BSR — Lock Period 30 Days — 8x Guaranteed Allocation — 6% APY
+Tier 5 — min 16000 BSR — Lock Period 60 Days — 16x Guaranteed Allocation — 8% APY
+Tier 6 — min 32000 BSR — Lock Period 90 Days — 32x Guaranteed Allocation — 10% APY
+Tier 7 — min 64000 BSR — Lock Period 120 Days — 64x Guaranteed Allocation — 12% APY
+Tier 8 — min 128000 BSR — Lock Period 150 Days — 128x Guaranteed Allocation — 15% APY
+For more information about the BinStarter Tier System, feel free to check out their website here: support.binstarter.io/article/18-binstarter-tier-system
+
+Hi! Yield farming, also known as liquidity farming is a way to earn rewards like interest and more cryptocurrency by lending or staking your crypto into a liquidity pool through DeFi (Decentralized Finance). If you want to learn more about yield farming, check out this complete guide: support.binstarter.io/article/19-yield-farming
+Just to give you a heads up, the APY rates are dynamic and may change over time. As more people stake their BSR, the APY rates may decrease slightly. But no need to worry - this is just a way to make sure that the supply of BSR stays controlled and doesn't get diluted. 
+We're looking for ambassadors to help us connect with local members of the community and share all the exciting programs we offer at BinStarter. If you're interested in learning more about this role, feel free to reach out to angel@binstarter.io for additional details. We can't wait to hear from you!
+
+Hey there! For the latest updates on our IDO calendar, please follow our Official Twitter account twitter.com/BinStarterio . You can also check out this link to get more information about the projects lined up for IDO: bsr.binstarter.io/ido/projects .
+
+Absolutely! 😉 We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
+
+We've also recently launched the Extended Insurance Protocol (EIP), which is a specialized insurance protocol that constantly evaluates the project's performance during the TGE and keeps track of the token price throughout the entire vesting schedule. If the token price remains below the IDO price for 5 consecutive days, the EIP is activated.
+You can easily spot projects that are involved with the EIP by looking for the ""EIP"" label on the IDO Projects page, which you can find at this link: https://bsr.binstarter.io/ido/projects .
+For more information about EIP and how it works, be sure to check out our blog at this link: blog.binstarter.io/eip
+
+EIP is an Extended Insurance Protocol that protects investors in case of a project failure. If the token price of a project falls below the IDO price for 5 consecutive days, EIP will trigger and investors will be refunded their investment.
+
+It is important to note that EIP is not a guarantee of success. It is simply a safety net that protects investors from losing all of their money if a project fails.
+
+Deomonstrating this level of security is manifested in the refund of some of the projects, the recent ones include YachtingVerse and Alaska Gold Rush."
+Hey there! For the latest updates on our IDO calendar, please follow our Official Twitter account twitter.com/BinStarterio . You can also check out this link to get more information about the projects lined up for IDO: bsr.binstarter.io/ido/projects .
+"If you staked your BSR and clicked on the Join Whitelist button in the project page before it closes, you are good to go. The Pool which has a “WHITELIST” label is the pool you are eligible to participate in.
+
+To get more details on how to join a Whitelist, please refer to this link support.binstarter.io/article/8-how-to-join-a-whitelist "
+BinStarter Official Local Channels list:
+👉 Click here for Turkish Group (@binstartertr)   
+👉 Click here  for Russian Group (@BinStarter_RU) 
+👉Click here  for Vietnamese Group (@binstarterVietnam) 
+👉Click here  for Nigerian Group (@BinStarterNigeria) 
+
+Also, be sure to subscribe to our telegram channel at @BinStarterAnnouncement and check out our blog for the latest news at blog.binstarter.io/."
+Thanks to the BinStarter V5 update, every BinStarter tier will now come with a guaranteed allocation. You can increase the IDO pool you're eligible for is by staking more BSR into a single pool and automatically moving up the Tiers. By adding more BSR to your staking pool, you can easily switch to a higher Tier without having to wait for the unstaking period. 
+
+You won't miss out on participating in our upcoming IDOs if you simply click the ""Join Whitelist"" button on the IDO Project page found at bsr.binstarter.io/ido/projects. Please note that the whitelisting process for BSR stakers ends 24 hours before the IDO. To learn more about participating in an IDO, check out our handy guide at support.binstarter.io/article/9-how-to-participate-in-an-ido."
+Yes. The Yacthingverse IDO took place on April 30, 2023 and concluded with resounding success. It's worth noting that all the allocations for BinStarter were sold out within moments, demonstrating an overwhelming response from the community. 
+You can earn BSR by simply sharing your referral link with your friends and family. You don't have to stake anything to qualify. You can get up to 1% of BSR from the Referee's staked amount. You will also get rewarded for each staking transaction made by the Referee in a year. You can copy your referral link from your My Profile page. Check out support.binstarter.io/article/20-referral-program for more details.
+Bonus ratio is 1/1000. Loyalty bonus is designed to incentivized BinStarter committed members. Our loyal community members are now receiving 10 times more loyalty bonus every 150 days for their commitment to BSR.
+"No, but we're excited to explore listing BinStarter on centralized exchanges (CEX) once the market picks up momentum again 👊
+
+Our long-term goal is to ensure that everyone is satisfied with the exchanges we choose to participate in."
+We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
+
+At the moment, BinStarter is compatible with two wallets: TrustWallet and MetaMask. To find detailed instructions on how to setup these wallets, please refer to the following links:
+
+How to Setup TrustWallet : support.binstarter.io/article/13-how-to-setup-trust-wallet
+How to Setup MetaMask Wallet: support.binstarter.io/article/11-how-to-setup-metamask-wallet"
+
+We're proud to be the industry's first insured launchpad that's helping to evolve the industry. Our main goal is to ensure the safety of our community and the projects we support. To achieve this, we've created an insurance policy that protects our members' investments in case of any unfair events. In the event that the policy is triggered during a launch, our members' funds are returned, essentially a 100% refund. We also have another protection system that safeguards our community from market conditions by protecting the undistributed part of their investment. Check out blog.binstarter.io/eip/ for more information 🙂
+
+Minimum amount of token to stake for a guaranteed allocation is 1000 BSR. 
+
+Below you'll find the different tiers available at BinStarter. These tiers have different requirements, such as a minimum number of BSR tokens, lock periods when you unstake, and pool weights that determine your IDO allocation. Additionally, the APY rates are used to calculate your staking reward.
+Here's an overview of the different tiers and their details 👇🏻
+Tier 1 — min 1000 BSR — Lock Period 7 days — 1x Guaranteed Allocation — 1% APY
+Tier 2 — min 2000 BSR — Lock Period 14 Days — 2x Guaranteed Allocation — 2% APY
+Tier 3 — min 4000 BSR — Lock Period 21 Days — 4x Guaranteed Allocation — 4% APY
+Tier 4 — min 8000 BSR — Lock Period 30 Days — 8x Guaranteed Allocation — 6% APY
+Tier 5 — min 16000 BSR — Lock Period 60 Days — 16x Guaranteed Allocation — 8% APY
+Tier 6 — min 32000 BSR — Lock Period 90 Days — 32x Guaranteed Allocation — 10% APY
+Tier 7 — min 64000 BSR — Lock Period 120 Days — 64x Guaranteed Allocation — 12% APY
+Tier 8 — min 128000 BSR — Lock Period 150 Days — 128x Guaranteed Allocation — 15% APY
+For more information about the BinStarter Tier System, feel free to check out their website here: support.binstarter.io/article/18-binstarter-tier-system
+
+Bonus ratio is 1/1000. Loyalty bonus is designed to incentivized BinStarter committed members. Our loyal community members are now receiving 10 times more loyalty bonus every 150 days for their commitment to BSR. 
+
+Hi! Yield farming, also known as liquidity farming is a way to earn rewards like interest and more cryptocurrency by lending or staking your crypto into a liquidity pool through DeFi (Decentralized Finance). If you want to learn more about yield farming, check out this complete guide: support.binstarter.io/article/19-yield-farming
+
+Just to give you a heads up, the APY rates are dynamic and may change over time. As more people stake their BSR, the APY rates may decrease slightly. But no need to worry - this is just a way to make sure that the supply of BSR stays controlled and doesn't get diluted. 
+
+We're looking for ambassadors to help us connect with local members of the community and share all the exciting programs we offer at BinStarter. If you're interested in learning more about this role, feel free to reach out to angel@binstarter.io for additional details. We can't wait to hear from you!
+
+Hey there! For the latest updates on our IDO calendar, please follow our Official Twitter account twitter.com/BinStarterio . You can also check out this link to get more information about the projects lined up for IDO: bsr.binstarter.io/ido/projects .
+
+We're proud to be an insured IDO launchpad, which means that all of our projects are covered under our Insurance Protocol mechanism. If our community is at a disadvantage during the IDO/Listing process, the insurance system kicks in and our community is directly refunded.
