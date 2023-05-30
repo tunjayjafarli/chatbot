@@ -1,6 +1,13 @@
 import pandas
 import openai
 
+from telegram import Bot
+
+async def get_telegram_bot_username(bot_token):
+    bot = Bot(token=bot_token)
+    bot_info = await bot.get_me()
+    return bot_info.username
+
 def get_openai_prompt(context_data, question):
     header = 'Answer the question as truthfully as possible using the provided context.' # , and if the answer is not contained within the context, say "I dont know."
     context = '\n'.join(context_data)
