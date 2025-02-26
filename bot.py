@@ -11,7 +11,6 @@ from telegram.ext import MessageHandler
 from constants import TELEGRAM_BOT_TOKEN
 from constants import OPENAI_API_KEY
 from constants import EMBEDDINGS_FILE
-from constants import GOOGLE_BARD_API_KEY
 from search import ask
 from search import get_embeddings
 from utils import get_telegram_bot_username
@@ -77,9 +76,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Run the program
 def main():
     print('Starting up bot...')
-
-    # Set the Google Bard API key
-    os.environ['_BARD_API_KEY'] = GOOGLE_BARD_API_KEY
 
     # Set the OpenAI API key
     openai.api_key = OPENAI_API_KEY
