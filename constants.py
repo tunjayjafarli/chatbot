@@ -12,6 +12,3 @@ EMBEDDING_ENCODING = 'cl100k_base'
 
 # Embeddings file path
 EMBEDDINGS_FILE = "data/embeddings.csv"
-
-# Google Bard API Key
-GOOGLE_BARD_API_KEY = "INSERT_GOOGLE_API_KEY_HERE"
